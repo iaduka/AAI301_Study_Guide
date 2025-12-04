@@ -3,271 +3,395 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Guide 3: Misinformation, Transparency, and Trustworthiness - EduPortal</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>AAI301 Seminar 3: Trust & Truth Infographic</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Palette: "Trust & Verification"
+         Primary: Royal Blue (#2563eb) - Trust, Authority
+         Danger: Rose Red (#e11d48) - Fakes, Danger
+         Neutral: Slate (#64748b) - Facts, Structure
+         Background: White/Light Gray (#f8fafc)
+    -->
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        /* Chart Container Styling */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            max-height: 350px;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+
+        /* Custom Cards */
+        .info-card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.1);
+            border-color: #2563eb;
+        }
+
+        /* Gradient Text */
+        .text-gradient-blue {
+            background: linear-gradient(to right, #2563eb, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-red {
+            background: linear-gradient(to right, #e11d48, #f43f5e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-graduation-cap"></i>
-                <span>EduPortal</span>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="lessons.html" class="nav-link">All Lessons</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+<body class="antialiased">
 
-    <!-- Lesson Content -->
-    <main class="lesson-main">
-        <div class="container">
-            <!-- Breadcrumb -->
-            <nav class="breadcrumb">
-                <a href="index.html">Home</a>
-                <span>/</span>
-                <span>Study Guide 3</span>
-            </nav>
-
-            <!-- Lesson Header -->
-            <header class="lesson-header">
-                <div class="lesson-meta">
-                    <span class="lesson-category">Ethical AI</span>
-                    <span class="lesson-date">Study Guide 3</span>
-                </div>
-                <h1 class="lesson-title">Misinformation, Transparency, and Trustworthiness</h1>
-                <div class="lesson-actions">
-                    <button class="btn btn-secondary" onclick="window.print()">
-                        <i class="fas fa-print"></i>
-                        Print
-                    </button>
-                </div>
-            </header>
-
-            <!-- Lesson Content -->
-            <article class="lesson-content">
-                <div class="content-wrapper">
-                    <h2>Overview</h2>
-                    <p>This study guide examines the challenges of misinformation in the age of generative AI and explores how transparency and trustworthiness can be built into AI systems. As AI becomes capable of generating increasingly convincing content, these issues become critical for society.</p>
-
-                    <h2>Learning Objectives</h2>
-                    <ul>
-                        <li>Understand the misinformation landscape in the context of AI</li>
-                        <li>Explore transparency requirements for AI systems</li>
-                        <li>Identify factors that contribute to AI trustworthiness</li>
-                        <li>Examine strategies for combating AI-generated misinformation</li>
-                    </ul>
-
-                    <h2>The Misinformation Challenge</h2>
-                    <p>Generative AI has dramatically lowered the barriers to creating convincing false content, posing unprecedented challenges for information integrity.</p>
-
-                    <h3>Types of AI-Generated Misinformation</h3>
-                    <ul>
-                        <li><strong>Deepfakes:</strong> Synthetic media depicting real people doing or saying things they never did</li>
-                        <li><strong>Text-based Disinformation:</strong> AI-generated articles, posts, and comments spreading false narratives</li>
-                        <li><strong>Synthetic Images:</strong> Fabricated photos used to support false claims</li>
-                        <li><strong>Voice Cloning:</strong> AI-generated audio impersonating real individuals</li>
-                        <li><strong>Hallucinations:</strong> AI systems presenting false information as fact</li>
-                    </ul>
-
-                    <h3>Impact of AI Misinformation</h3>
-                    <ul>
-                        <li>Erosion of public trust in media and institutions</li>
-                        <li>Manipulation of political discourse and elections</li>
-                        <li>Financial fraud and scams</li>
-                        <li>Damage to individual reputations</li>
-                        <li>Undermining of scientific consensus</li>
-                    </ul>
-
-                    <blockquote>
-                        "A lie can travel halfway around the world while the truth is putting on its shoes." — Often attributed to Mark Twain (now even more relevant in the AI age)
-                    </blockquote>
-
-                    <h2>Transparency in AI</h2>
-                    <p>Transparency is a foundational principle for building trustworthy AI systems that users and society can understand and evaluate.</p>
-
-                    <h3>Dimensions of Transparency</h3>
-                    <ul>
-                        <li><strong>Algorithmic Transparency:</strong> Understanding how AI systems make decisions</li>
-                        <li><strong>Data Transparency:</strong> Knowledge of what data was used for training</li>
-                        <li><strong>Purpose Transparency:</strong> Clear communication of AI system goals</li>
-                        <li><strong>Outcome Transparency:</strong> Visibility into AI system performance and impacts</li>
-                    </ul>
-
-                    <h3>Explainability</h3>
-                    <p>Explainable AI (XAI) provides insights into how AI systems reach their conclusions:</p>
-                    <ul>
-                        <li>Local explanations for individual decisions</li>
-                        <li>Global explanations of model behavior</li>
-                        <li>Feature importance and contribution</li>
-                        <li>Counterfactual explanations</li>
-                    </ul>
-
-                    <h3>Disclosure Requirements</h3>
-                    <ul>
-                        <li>AI-generated content labeling</li>
-                        <li>Bot disclosure in online interactions</li>
-                        <li>Model cards and datasheets</li>
-                        <li>System capability and limitation statements</li>
-                    </ul>
-
-                    <h2>Building Trustworthy AI</h2>
-                    <p>Trustworthiness encompasses multiple dimensions that together enable confidence in AI systems.</p>
-
-                    <h3>Pillars of Trustworthy AI</h3>
-                    <ul>
-                        <li><strong>Reliability:</strong> Consistent and predictable performance</li>
-                        <li><strong>Safety:</strong> Protection against harmful outcomes</li>
-                        <li><strong>Security:</strong> Resistance to attacks and misuse</li>
-                        <li><strong>Privacy:</strong> Protection of personal data</li>
-                        <li><strong>Fairness:</strong> Equitable treatment across groups</li>
-                        <li><strong>Transparency:</strong> Understandable operations and decisions</li>
-                        <li><strong>Accountability:</strong> Clear responsibility and recourse</li>
-                    </ul>
-
-                    <h3>Trust-Building Practices</h3>
-                    <ul>
-                        <li>Third-party audits and certifications</li>
-                        <li>Public testing and evaluation</li>
-                        <li>User feedback mechanisms</li>
-                        <li>Incident reporting and response</li>
-                        <li>Continuous monitoring and improvement</li>
-                    </ul>
-
-                    <h2>Combating AI Misinformation</h2>
-
-                    <h3>Technical Approaches</h3>
-                    <ul>
-                        <li><strong>Detection Tools:</strong> AI systems to identify synthetic content</li>
-                        <li><strong>Watermarking:</strong> Invisible markers in AI-generated content</li>
-                        <li><strong>Provenance Tracking:</strong> Systems to trace content origins</li>
-                        <li><strong>Authentication:</strong> Verification of content authenticity</li>
-                    </ul>
-
-                    <h3>Policy and Governance</h3>
-                    <ul>
-                        <li>Platform content moderation policies</li>
-                        <li>Regulatory requirements for AI disclosure</li>
-                        <li>Industry standards and self-regulation</li>
-                        <li>International cooperation frameworks</li>
-                    </ul>
-
-                    <h3>Education and Awareness</h3>
-                    <ul>
-                        <li>Media literacy programs</li>
-                        <li>Critical thinking education</li>
-                        <li>Public awareness campaigns</li>
-                        <li>Source verification training</li>
-                    </ul>
-
-                    <h2>Challenges and Tensions</h2>
-                    <ul>
-                        <li>Balancing transparency with competitive advantage</li>
-                        <li>Technical limitations of explainability</li>
-                        <li>Arms race between generation and detection</li>
-                        <li>Global coordination challenges</li>
-                        <li>Free speech considerations</li>
-                    </ul>
-
-                    <h2>Summary</h2>
-                    <p>Addressing misinformation and building transparent, trustworthy AI systems requires coordinated efforts across technology, policy, and education. As AI capabilities advance, maintaining information integrity becomes increasingly critical for democratic societies and individual decision-making.</p>
-
-                    <h2>Further Reading</h2>
-                    <ul>
-                        <li>Content Authenticity Initiative (CAI)</li>
-                        <li>Partnership on AI Synthetic Media Framework</li>
-                        <li>EU Code of Practice on Disinformation</li>
-                    </ul>
-                </div>
-            </article>
-
-            <!-- Lesson Navigation -->
-            <nav class="lesson-nav">
-                <div class="nav-previous">
-                    <a href="study-guide-2.html">
-                        <i class="fas fa-chevron-left"></i>
-                        <div>
-                            <span>Previous</span>
-                            <strong>Study Guide 2</strong>
-                        </div>
-                    </a>
-                </div>
-                <div class="nav-next">
-                    <a href="study-guide-4.html">
-                        <div>
-                            <span>Next</span>
-                            <strong>Study Guide 4</strong>
-                        </div>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                </div>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-extrabold text-slate-800 tracking-tight">AAI301 <span class="font-normal text-slate-500">| Seminar 3 Study Guide Infographics</span></h1>
+            <nav class="hidden md:flex space-x-6 text-sm font-semibold text-slate-600">
+                <a href="#definitions" class="hover:text-blue-600 transition">Definitions</a>
+                <a href="#deepfakes" class="hover:text-blue-600 transition">Deepfakes</a>
+                <a href="#psychology" class="hover:text-blue-600 transition">Psychology</a>
+                <a href="#trust" class="hover:text-blue-600 transition">Trust</a>
             </nav>
         </div>
-    </main>
+    </header>
+
+    <!-- Hero -->
+    <section class="py-20 text-center container mx-auto px-6">
+        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-bold uppercase tracking-wider mb-4 inline-block">Study Guide</span>
+        <h2 class="text-5xl md:text-7xl font-black mb-6 leading-tight text-slate-900">
+            Trust & <span class="text-gradient-red">Synthetic Reality</span>
+        </h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-10">
+            Navigating the complex landscape of AI-generated misinformation, deepfakes, and the fight for transparency in the digital age.
+        </p>
+    </section>
+
+    <!-- SECTION 1: MISINFORMATION VS DISINFORMATION -->
+    <section id="definitions" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Misinformation Card -->
+                <div class="info-card p-8 border-l-4 border-l-amber-400">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">⚠️</span>
+                        <h3 class="text-2xl font-bold text-slate-800">Misinformation</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">False information shared <strong>without</strong> harmful intent.</p>
+                    <div class="bg-amber-50 p-4 rounded text-sm text-amber-800">
+                        <strong>Example:</strong> A user shares an AI-generated image of a "catfish" believing it's a real new species.
+                    </div>
+                </div>
+
+                <!-- Disinformation Card -->
+                <div class="info-card p-8 border-l-4 border-l-rose-600">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">🚫</span>
+                        <h3 class="text-2xl font-bold text-slate-800">Disinformation</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">False information shared <strong>intentionally</strong> to deceive.</p>
+                    <div class="bg-rose-50 p-4 rounded text-sm text-rose-800">
+                        <strong>Example:</strong> Creating a deepfake of a CEO announcing bankruptcy to crash a stock price.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: DEEPFAKES (Visualized) -->
+    <section id="deepfakes" class="py-16 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-12 text-slate-800">The Deepfake Ecosystem</h3>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Chart: Deepfake Types Impact -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100">
+                    <h4 class="text-center font-bold text-slate-500 mb-4">Potential Impact Severity (0-10)</h4>
+                    <div class="chart-container">
+                        <canvas id="deepfakeChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Case Studies List -->
+                <div class="space-y-4">
+                    <div class="info-card p-6 flex gap-4 items-start">
+                        <div class="bg-blue-100 p-3 rounded-lg text-2xl">🎙️</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Audio: JFK Unsilenced</h4>
+                            <p class="text-sm text-slate-600 mt-1">AI recreated JFK's voice to deliver the speech he never gave in Dallas. <em>(Positive: History / Negative: Consent)</em></p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card p-6 flex gap-4 items-start">
+                        <div class="bg-rose-100 p-3 rounded-lg text-2xl">🎭</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Video: "Puppet Master"</h4>
+                            <p class="text-sm text-slate-600 mt-1">A deepfake Morgan Freeman warns viewers about "synthetic reality," proving even explicit warnings don't break the illusion.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card p-6 flex gap-4 items-start">
+                        <div class="bg-amber-100 p-3 rounded-lg text-2xl">📸</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Image: The "Pope Coat"</h4>
+                            <p class="text-sm text-slate-600 mt-1">Viral AI image of the Pope in a puffer jacket. Harmless fun, but showed how quickly visual lies spread.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: PSYCHOLOGY (Radar Chart) -->
+    <section id="psychology" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h3 class="text-3xl font-bold text-slate-800 mb-4">Why Do We Believe?</h3>
+                <p class="text-slate-600">
+                    It's not just the tech; it's our brains. Cognitive biases make us vulnerable to AI-generated falsehoods.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Explainer -->
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-bold text-blue-600 text-lg">Confirmation Bias</h4>
+                        <p class="text-sm text-slate-600">We accept fakes that align with what we already want to believe.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-blue-600 text-lg">Visual Supremacy</h4>
+                        <p class="text-sm text-slate-600">"Seeing is believing." Our brains are wired to trust visual input over text.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-rose-600 text-lg">The Liar's Dividend</h4>
+                        <p class="text-sm text-slate-600">The mere existence of deepfakes allows bad actors to dismiss <em>real</em> evidence as fake.</p>
+                    </div>
+                </div>
+
+                <!-- Radar Chart -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <div class="chart-container">
+                        <canvas id="psychChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: TRUST & TRANSPARENCY (Flow) -->
+    <section id="trust" class="py-16 bg-slate-900 text-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-12">Building Trustworthy AI</h3>
+            
+            <!-- Horizontal Flow Diagram -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+                
+                <div class="p-6 bg-slate-800 rounded-xl border border-slate-700 relative group hover:bg-slate-700 transition">
+                    <div class="text-4xl mb-4">🔍</div>
+                    <h4 class="font-bold mb-2">Transparency</h4>
+                    <p class="text-xs text-slate-400">Disclosing data sources & model architecture.</p>
+                    <!-- Connecting Line (Desktop) -->
+                    <div class="hidden md:block absolute top-1/2 -right-6 w-8 h-1 bg-slate-600 z-0"></div>
+                </div>
+
+                <div class="p-6 bg-slate-800 rounded-xl border border-slate-700 relative group hover:bg-slate-700 transition">
+                    <div class="text-4xl mb-4">🗣️</div>
+                    <h4 class="font-bold mb-2">Explainability</h4>
+                    <p class="text-xs text-slate-400">Understanding <em>why</em> the AI made a decision.</p>
+                    <div class="hidden md:block absolute top-1/2 -right-6 w-8 h-1 bg-slate-600 z-0"></div>
+                </div>
+
+                <div class="p-6 bg-slate-800 rounded-xl border border-slate-700 relative group hover:bg-slate-700 transition">
+                    <div class="text-4xl mb-4">🛡️</div>
+                    <h4 class="font-bold mb-2">Safety</h4>
+                    <p class="text-xs text-slate-400">Guardrails to prevent harm (physical/digital).</p>
+                    <div class="hidden md:block absolute top-1/2 -right-6 w-8 h-1 bg-slate-600 z-0"></div>
+                </div>
+
+                <div class="p-6 bg-green-900/30 border border-green-500/50 rounded-xl relative group hover:bg-green-900/50 transition">
+                    <div class="text-4xl mb-4">🤝</div>
+                    <h4 class="font-bold mb-2 text-green-400">Trust</h4>
+                    <p class="text-xs text-slate-300">The result: A reliable, accountable system.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: NEXT SEMINAR PREVIEW -->
+    <section class="py-16 bg-blue-50 border-t border-blue-100">
+        <div class="container mx-auto px-6 text-center">
+            <span class="text-xs font-bold text-blue-600 tracking-widest uppercase mb-2 block">Coming Up</span>
+            <h3 class="text-3xl font-bold text-slate-900 mb-6">Seminar 4: The Legal Frontier</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-blue-100">
+                    <h4 class="font-bold text-slate-800 mb-2">Privacy</h4>
+                    <p class="text-xs text-slate-500">Inference attacks & sensitive data leakage.</p>
+                </div>
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-blue-100">
+                    <h4 class="font-bold text-slate-800 mb-2">Liability</h4>
+                    <p class="text-xs text-slate-500">Who pays when autonomous AI causes harm?</p>
+                </div>
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-blue-100">
+                    <h4 class="font-bold text-slate-800 mb-2">IP Rights</h4>
+                    <p class="text-xs text-slate-500">"Zarya of the Dawn" & copyrighting AI art.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Buttons -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 max-w-4xl mx-auto">
+                <a href="index.html" class="group flex items-center gap-3 bg-slate-100 hover:bg-slate-200 border border-slate-300 hover:border-blue-500 text-slate-800 font-semibold py-4 px-8 rounded-xl transition-all duration-300 w-full sm:w-auto justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    <span>Back to Homepage</span>
+                </a>
+                <a href="study-guide-4.html" class="group flex items-center gap-3 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-semibold py-4 px-8 rounded-xl shadow-lg shadow-blue-500/20 transition-all duration-300 w-full sm:w-auto justify-center">
+                    <span>Next Study Guide Infographics</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>EduPortal</span>
-                    </div>
-                    <p>Your comprehensive platform for university lecture materials and educational resources.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="lessons.html">All Lessons</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Information</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> info@eduportal.edu</p>
-                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                        <p><i class="fas fa-map-marker-alt"></i> 123 University Ave, City, State 12345</p>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 EduPortal. All rights reserved.</p>
-            </div>
-        </div>
+    <footer class="bg-white py-8 text-center border-t border-slate-200">
+        <p class="text-slate-400 text-xs">AAI301 Seminar 3 Infographic • Generated for Student Revision</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- Scripts -->
+    <script>
+        // Utility: Label Wrapping
+        function wrapLabels(labels, maxLen = 15) {
+            return labels.map(label => {
+                if (label.length <= maxLen) return label;
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = words[0];
+                for (let i = 1; i < words.length; i++) {
+                    if ((currentLine + ' ' + words[i]).length <= maxLen) {
+                        currentLine += ' ' + words[i];
+                    } else {
+                        lines.push(currentLine);
+                        currentLine = words[i];
+                    }
+                }
+                lines.push(currentLine);
+                return lines;
+            });
+        }
+
+        // Chart Config
+        Chart.defaults.font.family = "'Outfit', sans-serif";
+        Chart.defaults.color = '#64748b';
+        
+        const tooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    return Array.isArray(label) ? label.join(' ') : label;
+                }
+            }
+        };
+
+        // 1. Deepfake Impact Chart (Bar)
+        new Chart(document.getElementById('deepfakeChart'), {
+            type: 'bar',
+            data: {
+                labels: wrapLabels(['Political Disinformation', 'Financial Fraud (Voice)', 'Non-Consensual Pornography', 'Historical Restoration', 'Entertainment (De-aging)']),
+                datasets: [{
+                    label: 'Societal Risk Score (1-10)',
+                    data: [10, 9, 9, 3, 2],
+                    backgroundColor: [
+                        '#e11d48', // Red (High Risk)
+                        '#e11d48',
+                        '#e11d48',
+                        '#2563eb', // Blue (Low Risk/Positive)
+                        '#2563eb'
+                    ],
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { x: { beginAtZero: true, max: 10 } },
+                plugins: { legend: { display: false }, tooltip: tooltipConfig }
+            }
+        });
+
+        // 2. Psychology Radar Chart
+        new Chart(document.getElementById('psychChart'), {
+            type: 'radar',
+            data: {
+                labels: wrapLabels(['Visual Trust', 'Confirmation Bias', 'Emotional Reaction', 'Source Verification', 'Digital Literacy']),
+                datasets: [{
+                    label: 'Vulnerability Factors',
+                    data: [9, 8, 9, 3, 4], // High vulnerability, low defense
+                    backgroundColor: 'rgba(225, 29, 72, 0.2)',
+                    borderColor: '#e11d48',
+                    pointBackgroundColor: '#e11d48'
+                },
+                {
+                    label: 'Ideal Defense Profile',
+                    data: [4, 2, 3, 9, 9], // Low vulnerability, high defense
+                    backgroundColor: 'rgba(37, 99, 235, 0.2)',
+                    borderColor: '#2563eb',
+                    pointBackgroundColor: '#2563eb'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: '#e2e8f0' },
+                        grid: { color: '#e2e8f0' },
+                        pointLabels: { font: { size: 11 } },
+                        suggestedMin: 0,
+                        suggestedMax: 10
+                    }
+                },
+                plugins: { legend: { position: 'bottom' }, tooltip: tooltipConfig }
+            }
+        });
+
+    </script>
 </body>
 </html>
