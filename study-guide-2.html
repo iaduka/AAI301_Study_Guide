@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Guide 2: Bias, Fairness, Responsibility, and Accountability - EduPortal</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>EduPortal</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="lessons.html" class="nav-link">All Lessons</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Lesson Content -->
+    <main class="lesson-main">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Study Guide 2</span>
+            </nav>
+
+            <!-- Lesson Header -->
+            <header class="lesson-header">
+                <div class="lesson-meta">
+                    <span class="lesson-category">Ethical AI</span>
+                    <span class="lesson-date">Study Guide 2</span>
+                </div>
+                <h1 class="lesson-title">Bias, Fairness, Responsibility, and Accountability</h1>
+                <div class="lesson-actions">
+                    <button class="btn btn-secondary" onclick="window.print()">
+                        <i class="fas fa-print"></i>
+                        Print
+                    </button>
+                </div>
+            </header>
+
+            <!-- Lesson Content -->
+            <article class="lesson-content">
+                <div class="content-wrapper">
+                    <h2>Overview</h2>
+                    <p>This study guide explores the critical issues of bias and fairness in AI systems, along with the frameworks for responsibility and accountability. Understanding these concepts is essential for developing AI that serves all members of society equitably.</p>
+
+                    <h2>Learning Objectives</h2>
+                    <ul>
+                        <li>Identify different types of bias in AI systems</li>
+                        <li>Understand various definitions and approaches to fairness</li>
+                        <li>Explore responsibility frameworks for AI development</li>
+                        <li>Examine accountability mechanisms for AI systems</li>
+                    </ul>
+
+                    <h2>Understanding Bias in AI</h2>
+                    <p>Bias in AI systems can arise from multiple sources and manifest in various ways, often reflecting and amplifying existing societal inequalities.</p>
+
+                    <h3>Types of Bias</h3>
+                    <ul>
+                        <li><strong>Historical Bias:</strong> When training data reflects past discrimination</li>
+                        <li><strong>Representation Bias:</strong> When certain groups are underrepresented in data</li>
+                        <li><strong>Measurement Bias:</strong> When features or labels are measured differently across groups</li>
+                        <li><strong>Aggregation Bias:</strong> When a single model is used for diverse groups</li>
+                        <li><strong>Evaluation Bias:</strong> When evaluation metrics don't account for fairness</li>
+                    </ul>
+
+                    <h3>Real-World Examples</h3>
+                    <ul>
+                        <li>Hiring algorithms that discriminate against certain demographics</li>
+                        <li>Facial recognition systems with higher error rates for minorities</li>
+                        <li>Credit scoring models that perpetuate financial inequality</li>
+                        <li>Healthcare algorithms that underserve certain populations</li>
+                    </ul>
+
+                    <blockquote>
+                        "AI systems are not neutral. They reflect the values, biases, and assumptions of their creators and the data they are trained on." — Timnit Gebru
+                    </blockquote>
+
+                    <h2>Approaches to Fairness</h2>
+                    <p>Fairness in AI is a complex concept with multiple definitions that can sometimes conflict with each other.</p>
+
+                    <h3>Fairness Definitions</h3>
+                    <ul>
+                        <li><strong>Demographic Parity:</strong> Equal outcomes across groups</li>
+                        <li><strong>Equalized Odds:</strong> Equal error rates across groups</li>
+                        <li><strong>Individual Fairness:</strong> Similar individuals treated similarly</li>
+                        <li><strong>Counterfactual Fairness:</strong> Decisions unchanged if protected attributes were different</li>
+                    </ul>
+
+                    <h3>Fairness Trade-offs</h3>
+                    <p>It is mathematically impossible to satisfy all fairness criteria simultaneously. Organizations must make deliberate choices about which aspects of fairness to prioritize based on context and values.</p>
+
+                    <h2>Responsibility in AI Development</h2>
+                    <p>Responsibility encompasses the duties of those involved in creating, deploying, and maintaining AI systems.</p>
+
+                    <h3>Stakeholder Responsibilities</h3>
+                    <ul>
+                        <li><strong>Developers:</strong> Building fair, safe, and transparent systems</li>
+                        <li><strong>Organizations:</strong> Establishing governance and oversight</li>
+                        <li><strong>Deployers:</strong> Appropriate use and monitoring</li>
+                        <li><strong>Regulators:</strong> Setting standards and enforcement</li>
+                        <li><strong>Users:</strong> Responsible use and reporting issues</li>
+                    </ul>
+
+                    <h2>Accountability Mechanisms</h2>
+                    <p>Accountability ensures that there are consequences for harmful AI outcomes and mechanisms for redress.</p>
+
+                    <h3>Key Components</h3>
+                    <ul>
+                        <li><strong>Auditability:</strong> Ability to examine AI decisions and processes</li>
+                        <li><strong>Explainability:</strong> Providing understandable reasons for decisions</li>
+                        <li><strong>Traceability:</strong> Tracking decisions back to their sources</li>
+                        <li><strong>Redress:</strong> Mechanisms for challenging and correcting errors</li>
+                    </ul>
+
+                    <h3>Accountability Frameworks</h3>
+                    <ul>
+                        <li>Impact assessments and audits</li>
+                        <li>Documentation and model cards</li>
+                        <li>Ethics review boards</li>
+                        <li>Regulatory compliance</li>
+                        <li>Legal liability frameworks</li>
+                    </ul>
+
+                    <h2>Mitigation Strategies</h2>
+                    <ul>
+                        <li>Diverse and representative training data</li>
+                        <li>Bias testing and monitoring</li>
+                        <li>Inclusive development teams</li>
+                        <li>Stakeholder engagement</li>
+                        <li>Continuous evaluation and improvement</li>
+                    </ul>
+
+                    <h2>Summary</h2>
+                    <p>Addressing bias and ensuring fairness in AI requires a multi-faceted approach that includes technical solutions, organizational practices, and regulatory frameworks. Clear responsibility and robust accountability mechanisms are essential for building trustworthy AI systems.</p>
+
+                    <h2>Further Reading</h2>
+                    <ul>
+                        <li>Fairness and Machine Learning by Barocas, Hardt, and Narayanan</li>
+                        <li>Algorithmic Justice League resources</li>
+                        <li>Partnership on AI Fairness Guidelines</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Lesson Navigation -->
+            <nav class="lesson-nav">
+                <div class="nav-previous">
+                    <a href="study-guide-1.html">
+                        <i class="fas fa-chevron-left"></i>
+                        <div>
+                            <span>Previous</span>
+                            <strong>Study Guide 1</strong>
+                        </div>
+                    </a>
+                </div>
+                <div class="nav-next">
+                    <a href="study-guide-3.html">
+                        <div>
+                            <span>Next</span>
+                            <strong>Study Guide 3</strong>
+                        </div>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>EduPortal</span>
+                    </div>
+                    <p>Your comprehensive platform for university lecture materials and educational resources.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="lessons.html">All Lessons</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> info@eduportal.edu</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 University Ave, City, State 12345</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EduPortal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

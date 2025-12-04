@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAI301: Generative AI & Ethics - Study Guide Infographic</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Palette: "Vibrant Tech" 
+         Backgrounds: Slate 900 (#0f172a), Slate 800 (#1e293b)
+         Text: White, Slate 300
+         Accents: Cyan 400 (#22d3ee), Fuchsia 500 (#d946ef), Violet 500 (#8b5cf6), Amber 400 (#fbbf24)
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #f8fafc; /* Slate 50 */
+        }
+        
+        /* Chart Container Styling - Mandatory Requirements */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Constraint for large screens */
+            height: 350px;    /* Base height */
+            max-height: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Responsive height adjustments */
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+
+        /* Utility for Diagram Nodes (No SVG) */
+        .flow-node {
+            border: 2px solid #22d3ee; /* Cyan */
+            background-color: rgba(30, 41, 59, 0.8);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .flow-node:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(34, 211, 238, 0.2);
+        }
+        .arrow-down {
+            width: 0; 
+            height: 0; 
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 15px solid #94a3b8;
+            margin: 0.5rem auto;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569; 
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-cyan-500 selection:text-white">
+
+    <!-- Navigation / Header -->
+    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-700 shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-500">
+                    AAI301 - Seminar 1 Study Guide Infographics
+                </h1>
+                <p class="text-xs text-slate-400 font-semibold tracking-widest uppercase">Generative AI & Ethics</p>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-300">
+                <a href="#landscape" class="hover:text-cyan-400 transition">Landscape</a>
+                <a href="#process" class="hover:text-cyan-400 transition">How It Works</a>
+                <a href="#ethics" class="hover:text-cyan-400 transition">Ethics</a>
+                <a href="#bias" class="hover:text-cyan-400 transition">Bias</a>
+                <a href="#tools" class="hover:text-cyan-400 transition">Tools</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-6 py-16 md:py-24 text-center">
+        <span class="inline-block py-1 px-3 rounded-full bg-cyan-900/30 text-cyan-300 text-xs font-bold mb-4 border border-cyan-700/50">Seminar 1 Study Guide</span>
+        <h2 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+            The Era of <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-fuchsia-500">Generative Creation</span>
+        </h2>
+        <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+            Moving beyond simple prediction. A visual guide to understanding Generative AI, its underlying mechanisms, and the critical ethical frameworks required to wield it responsibly.
+        </p>
+        <div class="flex justify-center gap-4">
+            <a href="#landscape" class="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold py-3 px-8 rounded-lg shadow-lg shadow-cyan-500/20 transition transform hover:-translate-y-1">Explore Data</a>
+        </div>
+    </section>
+
+    <!-- SECTION 1: AI vs Gen AI (Comparison) -->
+    <section id="landscape" class="py-16 bg-slate-800 relative overflow-hidden">
+        <!-- Decorative bg element -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+
+        <div class="container mx-auto px-6">
+            <div class="mb-12 text-center md:text-left">
+                <h3 class="text-3xl font-bold text-white mb-4 border-l-4 border-cyan-500 pl-4">The AI Landscape</h3>
+                <p class="text-slate-400 max-w-3xl">
+                    Traditional AI acts as an <strong>"Art Critic,"</strong> analyzing existing data to classify or predict. Generative AI acts as an <strong>"Artist,"</strong> creating entirely new content. This distinction defines their capabilities and utility.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Visual: Grouped Bar Chart -->
+                <div class="bg-slate-900 p-6 rounded-xl shadow-xl border border-slate-700">
+                    <h4 class="text-lg font-semibold text-cyan-300 mb-6 text-center">Capability Comparison: Traditional vs. Gen AI</h4>
+                    <div class="chart-container">
+                        <canvas id="aiComparisonChart"></canvas>
+                    </div>
+                    <p class="text-xs text-center text-slate-500 mt-4 italic">Scores represent conceptual strength in each domain (1-10)</p>
+                </div>
+
+                <!-- Text Context -->
+                <div class="space-y-6">
+                    <div class="bg-slate-900/50 p-6 rounded-lg border-l-4 border-blue-500">
+                        <h4 class="text-xl font-bold text-blue-400 mb-2">Traditional AI (Discriminative)</h4>
+                        <p class="text-sm text-slate-300">
+                            Focuses on distinctions. Used for spam filters, Netflix recommendations, and FaceID. It asks: "Is this A or B?"
+                        </p>
+                    </div>
+                    <div class="bg-slate-900/50 p-6 rounded-lg border-l-4 border-fuchsia-500">
+                        <h4 class="text-xl font-bold text-fuchsia-400 mb-2">Generative AI</h4>
+                        <p class="text-sm text-slate-300">
+                            Focuses on creation. Used for ChatGPT, DALL·E, and GitHub Copilot. It asks: "Generate something new that looks like A."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: How it Works (Process) -->
+    <section id="process" class="py-16 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="mb-12">
+                <h3 class="text-3xl font-bold text-white mb-4 border-l-4 border-fuchsia-500 pl-4">The Engine of Creation</h3>
+                <p class="text-slate-400 max-w-3xl">
+                    Generative AI doesn't "think" like a human; it predicts. Using Neural Networks (Transformers, GANs), it learns patterns from massive datasets to generate plausible outputs.
+                </p>
+            </div>
+
+            <!-- HTML/CSS Flowchart (No SVG/Mermaid) -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto relative">
+                
+                <!-- Step 1 -->
+                <div class="flow-node">
+                    <div class="text-4xl mb-2">📚</div>
+                    <h4 class="text-lg font-bold text-white mb-1">1. Ingestion</h4>
+                    <p class="text-xs text-slate-400">Model ingest vast datasets (books, code, images).</p>
+                </div>
+                
+                <!-- Arrow for mobile (down) desktop (right) -->
+                <div class="flex justify-center items-center md:rotate-270">
+                    <div class="arrow-down border-t-slate-600"></div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flow-node">
+                    <div class="text-4xl mb-2">🧠</div>
+                    <h4 class="text-lg font-bold text-white mb-1">2. Pattern Recognition</h4>
+                    <p class="text-xs text-slate-400">Learns structure & relationships (e.g., "cat" near "meow").</p>
+                </div>
+
+                <!-- Arrow -->
+                <div class="flex justify-center items-center md:rotate-270">
+                    <div class="arrow-down border-t-slate-600"></div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flow-node">
+                    <div class="text-4xl mb-2">✨</div>
+                    <h4 class="text-lg font-bold text-white mb-1">3. Generation</h4>
+                    <p class="text-xs text-slate-400">Predicts next token/pixel to create novel output.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <!-- Arrow -->
+                <div class="flex justify-center items-center md:rotate-270">
+                    <div class="arrow-down border-t-slate-600"></div>
+                </div>
+
+                 <div class="flow-node border-fuchsia-500">
+                    <div class="text-4xl mb-2">🎯</div>
+                    <h4 class="text-lg font-bold text-fuchsia-400 mb-1">4. Refinement</h4>
+                    <p class="text-xs text-slate-400">Output polished to meet quality thresholds.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Ethics & Law (Relationships) -->
+    <section id="ethics" class="py-16 bg-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <!-- Chart Col -->
+                <div class="order-2 md:order-1">
+                    <div class="bg-slate-900 p-6 rounded-xl shadow-xl border border-slate-700">
+                        <h4 class="text-lg font-semibold text-amber-400 mb-2 text-center">The "Can" vs. "Should" Matrix</h4>
+                        <p class="text-xs text-slate-500 text-center mb-6">Analyzing AI Actions by Legality and Ethicality</p>
+                        <div class="chart-container">
+                            <canvas id="lawEthicsScatter"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Col -->
+                <div class="order-1 md:order-2 flex flex-col justify-center">
+                    <h3 class="text-3xl font-bold text-white mb-4 border-l-4 border-amber-500 pl-4">Law vs. Ethics</h3>
+                    <p class="text-slate-400 mb-6">
+                        A critical distinction in AI governance. <strong>Law</strong> dictates what you can do (penalties), while <strong>Ethics</strong> dictates what you should do (values).
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-green-400 mr-2 text-xl">✓</span>
+                            <span class="text-sm text-slate-300"><strong>Legal but Unethical:</strong> Training on public social media data without consent. It complies with current laws but violates privacy norms.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-400 mr-2 text-xl">⚠</span>
+                            <span class="text-sm text-slate-300"><strong>The Gap:</strong> Technology often moves faster than legislation, creating a "grey zone" where ethical frameworks must guide decisions.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: The Rose Dilemma (Bias Case Study) -->
+    <section id="bias" class="py-16 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-white mb-4">The "Rose" Dilemma</h3>
+                <p class="text-slate-400 max-w-2xl mx-auto">
+                    A case study in data bias. If an AI is trained primarily on images of red roses, it learns a skewed reality, failing to represent the diversity of nature.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Doughnut Chart -->
+                <div class="md:col-span-1 bg-slate-800 p-6 rounded-xl shadow-lg border border-slate-700">
+                    <h4 class="text-sm font-bold text-slate-300 text-center mb-4">Hypothetical Training Data Composition</h4>
+                    <div class="chart-container" style="height: 250px; max-height: 250px;">
+                        <canvas id="roseBiasChart"></canvas>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <span class="text-xs text-red-400 font-bold">Risk: Stereotyping & Exclusion</span>
+                    </div>
+                </div>
+
+                <!-- Info Cards -->
+                <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-slate-800 p-5 rounded-lg border-t-4 border-red-500">
+                        <h5 class="font-bold text-white mb-2">Bias & Stereotyping</h5>
+                        <p class="text-xs text-slate-400">
+                            Failing to generate yellow or white roses reinforces the stereotype that "all roses are red." In human contexts, this leads to discrimination in hiring or policing.
+                        </p>
+                    </div>
+                    <div class="bg-slate-800 p-5 rounded-lg border-t-4 border-yellow-500">
+                        <h5 class="font-bold text-white mb-2">Copyright Theft</h5>
+                        <p class="text-xs text-slate-400">
+                            If the AI generates a rose identical to a copyrighted painting (e.g., Van Gogh), is it creative inspiration or data theft?
+                        </p>
+                    </div>
+                    <div class="bg-slate-800 p-5 rounded-lg border-t-4 border-purple-500">
+                        <h5 class="font-bold text-white mb-2">Hallucination</h5>
+                        <p class="text-xs text-slate-400">
+                            The AI might combine features to create a "Sunflower-Rose" hybrid and present it as real, spreading misinformation about biology.
+                        </p>
+                    </div>
+                    <div class="bg-slate-800 p-5 rounded-lg border-t-4 border-green-500">
+                        <h5 class="font-bold text-white mb-2">Mitigation</h5>
+                        <p class="text-xs text-slate-400">
+                            Requires diverse datasets (including all rose colors) and RLHF (Reinforcement Learning from Human Feedback) to correct skew.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Core Ethical Principles (Radar) -->
+    <section class="py-16 bg-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text -->
+                <div>
+                    <h3 class="text-3xl font-bold text-white mb-6 border-l-4 border-cyan-500 pl-4">6 Pillars of Responsible AI</h3>
+                    <p class="text-slate-400 mb-8">
+                        To navigate the risks of Generative AI, we adhere to six core ethical principles. These act as a compass for development and deployment.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center p-3 bg-slate-900 rounded-lg">
+                            <span class="bg-cyan-500 text-slate-900 text-xs font-bold px-2 py-1 rounded mr-3">1</span>
+                            <span class="text-sm text-slate-200"><strong>Fairness:</strong> Avoiding bias against groups.</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-slate-900 rounded-lg">
+                            <span class="bg-cyan-500 text-slate-900 text-xs font-bold px-2 py-1 rounded mr-3">2</span>
+                            <span class="text-sm text-slate-200"><strong>Responsibility:</strong> Owning the outcomes.</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-slate-900 rounded-lg">
+                            <span class="bg-cyan-500 text-slate-900 text-xs font-bold px-2 py-1 rounded mr-3">3</span>
+                            <span class="text-sm text-slate-200"><strong>Transparency:</strong> Understanding the "How".</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual: Radar Chart -->
+                <div class="bg-slate-900 p-6 rounded-xl shadow-xl border border-slate-700">
+                    <h4 class="text-lg font-semibold text-cyan-300 mb-2 text-center">Responsible AI Assessment Model</h4>
+                    <div class="chart-container">
+                        <canvas id="ethicsRadarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Tools Ecosystem (Comparison) -->
+    <section id="tools" class="py-16 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-white mb-8 text-center">The Gen AI Toolkit</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                 <!-- Polar Area Chart -->
+                 <div class="bg-slate-800 p-6 rounded-xl shadow-xl border border-slate-700">
+                    <h4 class="text-lg font-semibold text-fuchsia-300 mb-4 text-center">Tool Usage by Category</h4>
+                    <div class="chart-container">
+                        <canvas id="toolsPolarChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Tool List Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-cyan-500 transition">
+                        <span class="text-2xl">📝</span>
+                        <h5 class="font-bold text-cyan-400 mt-2">Text Gen</h5>
+                        <p class="text-xs text-slate-400">ChatGPT, Gemini, Claude. Used for essays, summaries, tone shifting.</p>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-fuchsia-500 transition">
+                        <span class="text-2xl">🎨</span>
+                        <h5 class="font-bold text-fuchsia-400 mt-2">Image Gen</h5>
+                        <p class="text-xs text-slate-400">Leonardo.ai, DALL·E. Prompt engineering for style and composition.</p>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-blue-500 transition">
+                        <span class="text-2xl">💻</span>
+                        <h5 class="font-bold text-blue-400 mt-2">Code Gen</h5>
+                        <p class="text-xs text-slate-400">Claude, Copilot. Rapid prototyping (e.g., Snake Game).</p>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg border border-slate-700 hover:border-violet-500 transition">
+                        <span class="text-2xl">🎙️</span>
+                        <h5 class="font-bold text-violet-400 mt-2">Audio Gen</h5>
+                        <p class="text-xs text-slate-400">ElevenLabs. Voice cloning and TTS experiments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: Future/Trend (Seminar 2 Preview) -->
+    <section class="py-16 bg-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="bg-gradient-to-r from-slate-900 to-slate-800 p-8 rounded-2xl shadow-2xl border border-slate-700">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="md:col-span-1">
+                        <h3 class="text-2xl font-bold text-white mb-2">Looking Ahead: Seminar 2</h3>
+                        <p class="text-sm text-slate-400 mb-6">
+                            We move from identifying principles to analyzing real-world failures. The focus shifts towards Accountability and Systematic Bias.
+                        </p>
+                        <div class="bg-slate-800 p-4 rounded border-l-2 border-cyan-500">
+                            <h5 class="text-cyan-400 text-sm font-bold mb-1">Key Question:</h5>
+                            <p class="text-xs text-slate-300 italic">"Who is to blame when a chatbot gives bad advice? The developer, the user, or the school?"</p>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2">
+                         <h4 class="text-sm font-semibold text-slate-400 mb-4 text-center">Trend: Growing Focus on AI Accountability</h4>
+                        <div class="chart-container" style="height: 250px; max-height: 250px;">
+                            <canvas id="trendLineChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Buttons -->
+    <section class="py-12 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 max-w-4xl mx-auto">
+                <a href="index.html" class="group flex items-center gap-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-cyan-500 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 w-full sm:w-auto justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-cyan-400 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    <span>Back to Homepage</span>
+                </a>
+                <a href="study-guide-2.html" class="group flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-fuchsia-500 hover:from-cyan-400 hover:to-fuchsia-400 text-white font-semibold py-4 px-8 rounded-xl shadow-lg shadow-cyan-500/20 transition-all duration-300 w-full sm:w-auto justify-center">
+                    <span>Next Study Guide Infographics</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-8 border-t border-slate-800 text-center">
+        <p class="text-slate-500 text-sm">AAI301 Seminar 1 Study Guide • Infographic Generated for Student Revision</p>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // --- UTILITY: Label Wrapping (16-char logic) ---
+        function wrapLabels(labels, maxLen = 16) {
+            return labels.map(label => {
+                if (label.length <= maxLen) return label;
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = words[0];
+
+                for (let i = 1; i < words.length; i++) {
+                    if ((currentLine + ' ' + words[i]).length <= maxLen) {
+                        currentLine += ' ' + words[i];
+                    } else {
+                        lines.push(currentLine);
+                        currentLine = words[i];
+                    }
+                }
+                lines.push(currentLine);
+                return lines;
+            });
+        }
+
+        // --- GLOBAL CHART DEFAULTS ---
+        Chart.defaults.color = '#94a3b8'; // Slate 400
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.scale.grid.color = '#334155'; // Slate 700
+        Chart.defaults.plugins.tooltip.backgroundColor = '#1e293b'; // Slate 800
+        Chart.defaults.plugins.tooltip.titleColor = '#f8fafc';
+        Chart.defaults.plugins.tooltip.bodyColor = '#cbd5e1';
+        Chart.defaults.plugins.tooltip.borderColor = '#475569';
+        Chart.defaults.plugins.tooltip.borderWidth = 1;
+        
+        // Mandatory Tooltip Callback configuration
+        const tooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // --- CHART 1: AI vs Gen AI (Grouped Bar) ---
+        const ctx1 = document.getElementById('aiComparisonChart').getContext('2d');
+        const labels1 = wrapLabels(['Data Analysis', 'Pattern Recognition', 'Prediction Accuracy', 'Content Novelty', 'Creative Output']);
+        
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: labels1,
+                datasets: [
+                    {
+                        label: 'Traditional AI',
+                        data: [9, 8, 9, 2, 1],
+                        backgroundColor: '#3b82f6', // Blue 500
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Generative AI',
+                        data: [6, 9, 7, 10, 10],
+                        backgroundColor: '#d946ef', // Fuchsia 500
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y', // Horizontal bar for better readability of text
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: tooltipConfig
+                },
+                scales: {
+                    x: { beginAtZero: true, max: 10 }
+                }
+            }
+        });
+
+        // --- CHART 2: Law vs Ethics (Scatter Plot) ---
+        const ctx2 = document.getElementById('lawEthicsScatter').getContext('2d');
+        new Chart(ctx2, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Scenarios',
+                    data: [
+                        { x: 9, y: 2, label: 'Public Data Scraping' }, // Legal but Unethical
+                        { x: 2, y: 9, label: 'Bias Auditing' }, // Ethical but maybe not legally mandated
+                        { x: 9, y: 9, label: 'Consent-based Training' }, // Ideal
+                        { x: 1, y: 1, label: 'Deepfake Fraud' }, // Illegal and Unethical
+                        { x: 8, y: 5, label: 'Automated Hiring' } // Legal grey area, ethical concerns
+                    ],
+                    backgroundColor: function(context) {
+                        const val = context.raw;
+                        if (!val) return '#94a3b8';
+                        if (val.y < 5) return '#fbbf24'; // Warning (Low Ethics)
+                        return '#22d3ee'; // OK
+                    },
+                    pointRadius: 8,
+                    pointHoverRadius: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.raw.label + ` (Legality: ${context.raw.x}, Ethics: ${context.raw.y})`;
+                            }
+                        }
+                    },
+                    legend: { display: false }
+                },
+                scales: {
+                    x: { 
+                        title: { display: true, text: 'Legality (Can do)', color: '#94a3b8' },
+                        min: 0, max: 10 
+                    },
+                    y: { 
+                        title: { display: true, text: 'Ethicality (Should do)', color: '#94a3b8' },
+                        min: 0, max: 10 
+                    }
+                }
+            }
+        });
+
+        // --- CHART 3: Rose Bias (Doughnut) ---
+        const ctx3 = document.getElementById('roseBiasChart').getContext('2d');
+        const labels3 = wrapLabels(['Red Roses', 'White Roses', 'Yellow Roses', 'Pink Roses']);
+        
+        new Chart(ctx3, {
+            type: 'doughnut',
+            data: {
+                labels: labels3,
+                datasets: [{
+                    data: [85, 5, 5, 5],
+                    backgroundColor: [
+                        '#ef4444', // Red 500
+                        '#f1f5f9', // Slate 100
+                        '#eab308', // Yellow 500
+                        '#ec4899'  // Pink 500
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'right', labels: { boxWidth: 12 } },
+                    tooltip: tooltipConfig
+                }
+            }
+        });
+
+        // --- CHART 4: Ethical Pillars (Radar) ---
+        const ctx4 = document.getElementById('ethicsRadarChart').getContext('2d');
+        const labels4 = wrapLabels(['Fairness', 'Responsibility', 'Transparency', 'Privacy', 'Nonmaleficence', 'Autonomy']);
+
+        new Chart(ctx4, {
+            type: 'radar',
+            data: {
+                labels: labels4,
+                datasets: [{
+                    label: 'Responsible AI Model Goal',
+                    data: [9, 9, 8, 10, 9, 8],
+                    fill: true,
+                    backgroundColor: 'rgba(34, 211, 238, 0.2)', // Cyan transparent
+                    borderColor: '#22d3ee',
+                    pointBackgroundColor: '#22d3ee',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#22d3ee'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: '#334155' },
+                        grid: { color: '#334155' },
+                        pointLabels: { color: '#e2e8f0', font: { size: 11 } },
+                        suggestedMin: 0,
+                        suggestedMax: 10
+                    }
+                },
+                plugins: {
+                    tooltip: tooltipConfig
+                }
+            }
+        });
+
+        // --- CHART 5: Tools (Polar Area) ---
+        const ctx5 = document.getElementById('toolsPolarChart').getContext('2d');
+        const labels5 = wrapLabels(['Text Gen (ChatGPT)', 'Image Gen (Leonardo)', 'Audio Gen (ElevenLabs)', 'Code Gen (Claude)', 'Classification (Teachable)']);
+
+        new Chart(ctx5, {
+            type: 'polarArea',
+            data: {
+                labels: labels5,
+                datasets: [{
+                    label: 'Class Usage Intensity',
+                    data: [5, 4, 3, 3, 2],
+                    backgroundColor: [
+                        'rgba(34, 211, 238, 0.6)', // Cyan
+                        'rgba(217, 70, 239, 0.6)', // Fuchsia
+                        'rgba(139, 92, 246, 0.6)', // Violet
+                        'rgba(59, 130, 246, 0.6)', // Blue
+                        'rgba(16, 185, 129, 0.6)'  // Emerald
+                    ],
+                    borderWidth: 1,
+                    borderColor: '#1e293b'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        grid: { color: '#334155' },
+                        ticks: { display: false, backdropColor: 'transparent' }
+                    }
+                },
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: tooltipConfig
+                }
+            }
+        });
+
+        // --- CHART 6: Trend (Line) ---
+        const ctx6 = document.getElementById('trendLineChart').getContext('2d');
+        const labels6 = wrapLabels(['2020', '2022', '2024', '2026 (Projected)', '2028 (Future)']);
+
+        new Chart(ctx6, {
+            type: 'line',
+            data: {
+                labels: labels6,
+                datasets: [
+                    {
+                        label: 'AI Capability',
+                        data: [20, 50, 85, 95, 100],
+                        borderColor: '#3b82f6',
+                        backgroundColor: '#3b82f6',
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Regulatory Scrutiny',
+                        data: [10, 20, 45, 80, 95],
+                        borderColor: '#ef4444', // Red for scrutiny/accountability
+                        backgroundColor: '#ef4444',
+                        tension: 0.4,
+                        borderDash: [5, 5]
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: tooltipConfig
+                },
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
