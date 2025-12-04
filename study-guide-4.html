@@ -3,296 +3,431 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Guide 4: Nonmaleficence & Beneficence, Privacy, Liability, and Intellectual Property - EduPortal</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>AAI301 Seminar 4: Ethics, Law & IP Infographic</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Palette: "Legal & Ethical" 
+         Background: Slate 50 (#f8fafc)
+         Primary Text: Slate 900 (#0f172a)
+         Accent 1 (Good/Beneficence): Emerald 500 (#10b981)
+         Accent 2 (Bad/Maleficence): Rose 500 (#f43f5e)
+         Accent 3 (Law/IP): Indigo 600 (#4f46e5)
+         Accent 4 (Warning/Privacy): Amber 500 (#f59e0b)
+    -->
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc; /* Slate 50 */
+            color: #0f172a; /* Slate 900 */
+        }
+
+        /* Chart Container Styling (Mandatory) */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 350px;
+            max-height: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+
+        /* Card Styling */
+        .card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Gradient Text */
+        .text-gradient-legal {
+            background: linear-gradient(to right, #4f46e5, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+    </style>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-graduation-cap"></i>
-                <span>EduPortal</span>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-extrabold tracking-tight text-slate-800">AAI301 <span class="font-normal text-slate-500">| Seminar 4 Study Guide Infographics</span></h1>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="lessons.html" class="nav-link">All Lessons</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Lesson Content -->
-    <main class="lesson-main">
-        <div class="container">
-            <!-- Breadcrumb -->
-            <nav class="breadcrumb">
-                <a href="index.html">Home</a>
-                <span>/</span>
-                <span>Study Guide 4</span>
-            </nav>
-
-            <!-- Lesson Header -->
-            <header class="lesson-header">
-                <div class="lesson-meta">
-                    <span class="lesson-category">Ethical AI</span>
-                    <span class="lesson-date">Study Guide 4</span>
-                </div>
-                <h1 class="lesson-title">Nonmaleficence & Beneficence, Privacy, Liability, and Intellectual Property</h1>
-                <div class="lesson-actions">
-                    <button class="btn btn-secondary" onclick="window.print()">
-                        <i class="fas fa-print"></i>
-                        Print
-                    </button>
-                </div>
-            </header>
-
-            <!-- Lesson Content -->
-            <article class="lesson-content">
-                <div class="content-wrapper">
-                    <h2>Overview</h2>
-                    <p>This study guide examines fundamental ethical principles of harm prevention and benefit maximization, alongside critical legal considerations including privacy protection, liability frameworks, and intellectual property rights in the context of AI systems.</p>
-
-                    <h2>Learning Objectives</h2>
-                    <ul>
-                        <li>Understand the principles of nonmaleficence and beneficence in AI</li>
-                        <li>Examine privacy challenges and protection frameworks</li>
-                        <li>Explore liability considerations for AI systems</li>
-                        <li>Analyze intellectual property issues in generative AI</li>
-                    </ul>
-
-                    <h2>Nonmaleficence: Do No Harm</h2>
-                    <p>Nonmaleficence is the ethical principle of avoiding harm. In AI, this requires careful consideration of potential negative impacts.</p>
-
-                    <h3>Types of AI Harm</h3>
-                    <ul>
-                        <li><strong>Physical Harm:</strong> Injuries from autonomous systems or robots</li>
-                        <li><strong>Psychological Harm:</strong> Mental health impacts from AI interactions</li>
-                        <li><strong>Economic Harm:</strong> Financial losses from AI decisions</li>
-                        <li><strong>Social Harm:</strong> Discrimination, exclusion, manipulation</li>
-                        <li><strong>Informational Harm:</strong> Privacy violations, data breaches</li>
-                    </ul>
-
-                    <h3>Risk Assessment</h3>
-                    <ul>
-                        <li>Identifying potential harms before deployment</li>
-                        <li>Evaluating likelihood and severity of harms</li>
-                        <li>Implementing safeguards and mitigation strategies</li>
-                        <li>Continuous monitoring for emerging harms</li>
-                    </ul>
-
-                    <h2>Beneficence: Doing Good</h2>
-                    <p>Beneficence requires actively seeking to benefit individuals and society through AI development.</p>
-
-                    <h3>Maximizing Benefits</h3>
-                    <ul>
-                        <li><strong>Healthcare:</strong> Improved diagnostics and treatment</li>
-                        <li><strong>Education:</strong> Personalized learning experiences</li>
-                        <li><strong>Accessibility:</strong> Tools for people with disabilities</li>
-                        <li><strong>Scientific Research:</strong> Accelerated discovery</li>
-                        <li><strong>Environmental:</strong> Climate modeling and conservation</li>
-                    </ul>
-
-                    <blockquote>
-                        "The question is not whether AI will be used for good or evil, but whether we can create the conditions for good uses to flourish while minimizing harm." — Stuart Russell
-                    </blockquote>
-
-                    <h3>Balancing Benefits and Risks</h3>
-                    <p>Ethical AI development requires weighing potential benefits against possible harms:</p>
-                    <ul>
-                        <li>Risk-benefit analysis frameworks</li>
-                        <li>Proportionality assessments</li>
-                        <li>Stakeholder impact evaluation</li>
-                        <li>Long-term consequence consideration</li>
-                    </ul>
-
-                    <h2>Privacy in the Age of AI</h2>
-                    <p>AI systems often require vast amounts of data, creating significant privacy challenges.</p>
-
-                    <h3>Privacy Concerns</h3>
-                    <ul>
-                        <li><strong>Data Collection:</strong> Scope and consent for training data</li>
-                        <li><strong>Inference:</strong> Deriving sensitive information from non-sensitive data</li>
-                        <li><strong>Surveillance:</strong> AI-powered monitoring and tracking</li>
-                        <li><strong>Profiling:</strong> Creating detailed individual profiles</li>
-                        <li><strong>Data Breaches:</strong> Exposure of training data or model outputs</li>
-                    </ul>
-
-                    <h3>Privacy-Preserving Technologies</h3>
-                    <ul>
-                        <li><strong>Differential Privacy:</strong> Adding noise to protect individual data</li>
-                        <li><strong>Federated Learning:</strong> Training models without centralizing data</li>
-                        <li><strong>Homomorphic Encryption:</strong> Computing on encrypted data</li>
-                        <li><strong>Secure Multi-party Computation:</strong> Collaborative computation without sharing data</li>
-                    </ul>
-
-                    <h3>Regulatory Frameworks</h3>
-                    <ul>
-                        <li>GDPR (European Union)</li>
-                        <li>CCPA/CPRA (California)</li>
-                        <li>LGPD (Brazil)</li>
-                        <li>PIPL (China)</li>
-                    </ul>
-
-                    <h2>Liability for AI Systems</h2>
-                    <p>Determining responsibility when AI systems cause harm presents complex legal challenges.</p>
-
-                    <h3>Liability Questions</h3>
-                    <ul>
-                        <li>Who is responsible when an AI system causes harm?</li>
-                        <li>How do existing legal frameworks apply to AI?</li>
-                        <li>What standard of care should be required?</li>
-                        <li>How can harm be attributed to specific actors?</li>
-                    </ul>
-
-                    <h3>Potential Liable Parties</h3>
-                    <ul>
-                        <li><strong>Developers:</strong> Those who create the AI system</li>
-                        <li><strong>Deployers:</strong> Organizations using the AI system</li>
-                        <li><strong>Operators:</strong> Individuals controlling the system</li>
-                        <li><strong>Data Providers:</strong> Sources of training data</li>
-                        <li><strong>Users:</strong> Those who make final decisions</li>
-                    </ul>
-
-                    <h3>Liability Frameworks</h3>
-                    <ul>
-                        <li><strong>Negligence:</strong> Failure to exercise reasonable care</li>
-                        <li><strong>Strict Liability:</strong> Liability regardless of fault</li>
-                        <li><strong>Product Liability:</strong> Defective product claims</li>
-                        <li><strong>Vicarious Liability:</strong> Responsibility for others' actions</li>
-                    </ul>
-
-                    <h2>Intellectual Property and AI</h2>
-                    <p>Generative AI raises novel intellectual property questions that existing frameworks struggle to address.</p>
-
-                    <h3>Training Data Issues</h3>
-                    <ul>
-                        <li>Copyright implications of training on protected works</li>
-                        <li>Fair use and fair dealing considerations</li>
-                        <li>Licensing and consent requirements</li>
-                        <li>Data scraping legality</li>
-                    </ul>
-
-                    <h3>AI-Generated Content</h3>
-                    <ul>
-                        <li><strong>Authorship:</strong> Who owns AI-generated works?</li>
-                        <li><strong>Originality:</strong> Are AI outputs sufficiently creative?</li>
-                        <li><strong>Infringement:</strong> When do outputs infringe existing works?</li>
-                        <li><strong>Attribution:</strong> How should AI involvement be disclosed?</li>
-                    </ul>
-
-                    <h3>Current Legal Positions</h3>
-                    <ul>
-                        <li>US Copyright Office: AI cannot be an author</li>
-                        <li>UK: Computer-generated works have limited protection</li>
-                        <li>EU: Human creativity requirement</li>
-                        <li>Ongoing litigation and policy development</li>
-                    </ul>
-
-                    <h3>Emerging Solutions</h3>
-                    <ul>
-                        <li>Opt-out mechanisms for training data</li>
-                        <li>Compensation schemes for creators</li>
-                        <li>New licensing frameworks</li>
-                        <li>Content provenance technologies</li>
-                    </ul>
-
-                    <h2>Summary</h2>
-                    <p>The ethical principles of nonmaleficence and beneficence, combined with legal considerations of privacy, liability, and intellectual property, form a complex landscape that AI developers and deployers must navigate carefully. As AI technology evolves, these frameworks continue to develop and adapt.</p>
-
-                    <h2>Further Reading</h2>
-                    <ul>
-                        <li>NIST AI Risk Management Framework</li>
-                        <li>EU AI Liability Directive</li>
-                        <li>World Intellectual Property Organization AI Resources</li>
-                    </ul>
-                </div>
-            </article>
-
-            <!-- Lesson Navigation -->
-            <nav class="lesson-nav">
-                <div class="nav-previous">
-                    <a href="study-guide-3.html">
-                        <i class="fas fa-chevron-left"></i>
-                        <div>
-                            <span>Previous</span>
-                            <strong>Study Guide 3</strong>
-                        </div>
-                    </a>
-                </div>
-                <div class="nav-next">
-                    <a href="study-guide-5.html">
-                        <div>
-                            <span>Next</span>
-                            <strong>Study Guide 5</strong>
-                        </div>
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
+                <a href="#ethics" class="hover:text-emerald-600 transition">Ethics</a>
+                <a href="#privacy" class="hover:text-amber-600 transition">Privacy</a>
+                <a href="#liability" class="hover:text-rose-600 transition">Liability</a>
+                <a href="#ip" class="hover:text-indigo-600 transition">IP Rights</a>
             </nav>
         </div>
-    </main>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-6 py-20 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-200 text-xs font-bold text-indigo-700 mb-6">
+            <span>⚖️</span> Law & Ethics in AI
+        </div>
+        <h2 class="text-5xl md:text-7xl font-black mb-6 leading-tight text-slate-900">
+            Balancing <span class="text-gradient-legal">Innovation</span> & Responsibility
+        </h2>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-10">
+            Navigating the legal minefield of Generative AI: From avoiding harm and protecting privacy to defining ownership in a machine-generated world.
+        </p>
+    </section>
+
+    <!-- SECTION 1: ETHICAL MANDATES (Comparison) -->
+    <section id="ethics" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center text-slate-800 mb-12">The Ethical Balance Sheet</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Text Cards -->
+                <div class="space-y-6">
+                    <!-- Nonmaleficence -->
+                    <div class="card border-l-8 border-l-rose-500">
+                        <h4 class="text-xl font-bold text-slate-800 mb-2 flex items-center gap-2">
+                            <span class="text-2xl">🛡️</span> Nonmaleficence
+                        </h4>
+                        <p class="text-sm font-bold text-rose-600 uppercase tracking-wider mb-2">"Do No Harm"</p>
+                        <p class="text-slate-600 text-sm">
+                            The obligation to avoid causing harm, whether intentional (e.g., deepfakes) or unintentional (e.g., biased medical diagnosis).
+                        </p>
+                    </div>
+
+                    <!-- Beneficence -->
+                    <div class="card border-l-8 border-l-emerald-500">
+                        <h4 class="text-xl font-bold text-slate-800 mb-2 flex items-center gap-2">
+                            <span class="text-2xl">🌱</span> Beneficence
+                        </h4>
+                        <p class="text-sm font-bold text-emerald-600 uppercase tracking-wider mb-2">"Do Good"</p>
+                        <p class="text-slate-600 text-sm">
+                            The obligation to actively promote well-being. Examples include AI accelerating drug discovery or creating personalized education tools.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Radar Chart: Ethical Focus Areas -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h4 class="text-center text-slate-500 mb-4 font-semibold">Current Legal & Ethical Focus Areas</h4>
+                    <div class="chart-container">
+                        <canvas id="ethicsRadarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: PRIVACY RISKS (Horizontal Bar) -->
+    <section id="privacy" class="py-16 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Chart -->
+                <div class="order-2 lg:order-1 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                    <h4 class="text-center text-slate-500 mb-4 font-semibold">Privacy Risk Severity Assessment</h4>
+                    <div class="chart-container">
+                        <canvas id="privacyRiskChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="order-1 lg:order-2">
+                    <h3 class="text-3xl font-bold text-slate-900 mb-6 border-l-4 border-amber-500 pl-4">Privacy in the Age of AI</h3>
+                    <p class="text-slate-600 mb-6">
+                        Generative AI creates new avenues for privacy violations that go beyond simple data theft. It can <em>infer</em> private data or <em>fabricate</em> realistic identities.
+                    </p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="bg-amber-100 text-amber-700 p-2 rounded-lg text-xl">🆔</span>
+                            <div>
+                                <h5 class="font-bold text-slate-800">Identity Theft</h5>
+                                <p class="text-xs text-slate-500">AI generating fake passports or synthetic identities (e.g., creating a fake person with a real NRIC).</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-amber-100 text-amber-700 p-2 rounded-lg text-xl">🎭</span>
+                            <div>
+                                <h5 class="font-bold text-slate-800">Deepfake Scams</h5>
+                                <p class="text-xs text-slate-500">Using cloned voices to trick employees into transferring funds (e.g., the Arup finance case).</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-amber-100 text-amber-700 p-2 rounded-lg text-xl">🔓</span>
+                            <div>
+                                <h5 class="font-bold text-slate-800">Inference Attacks</h5>
+                                <p class="text-xs text-slate-500">Reverse-engineering a model to extract the sensitive private data it was trained on.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: LIABILITY (Flow/Process) -->
+    <section id="liability" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center text-slate-800 mb-12">The Liability Maze</h3>
+            <p class="text-center text-slate-500 max-w-2xl mx-auto mb-10">
+                When an AI causes harm, who pays? The "Black Box" nature of AI makes tracing responsibility difficult.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Developer -->
+                <div class="card border-t-4 border-t-indigo-500 hover:bg-indigo-50/50 transition">
+                    <div class="text-4xl mb-4">👨‍💻</div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2">The Developer</h4>
+                    <p class="text-sm text-slate-600 mb-4"><strong>Responsible for:</strong> Code flaws, algorithmic bias, model safety features.</p>
+                    <div class="bg-slate-100 p-3 rounded text-xs text-slate-500">
+                        <em>Defense:</em> "The model was used in an unforeseen way."
+                    </div>
+                </div>
+
+                <!-- Deployer -->
+                <div class="card border-t-4 border-t-purple-500 hover:bg-purple-50/50 transition">
+                    <div class="text-4xl mb-4">🏢</div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2">The Deployer</h4>
+                    <p class="text-sm text-slate-600 mb-4"><strong>Responsible for:</strong> Implementation, data provided, human oversight (HITL).</p>
+                    <div class="bg-slate-100 p-3 rounded text-xs text-slate-500">
+                        <em>Defense:</em> "We relied on the vendor's safety claims."
+                    </div>
+                </div>
+
+                <!-- User -->
+                <div class="card border-t-4 border-t-rose-500 hover:bg-rose-50/50 transition">
+                    <div class="text-4xl mb-4">👤</div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2">The User</h4>
+                    <p class="text-sm text-slate-600 mb-4"><strong>Responsible for:</strong> Malicious prompts, misuse, lack of verification.</p>
+                    <div class="bg-slate-100 p-3 rounded text-xs text-slate-500">
+                        <em>Defense:</em> "The AI told me it was true."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: INTELLECTUAL PROPERTY (Case Study) -->
+    <section id="ip" class="py-16 bg-slate-900 text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Text -->
+                <div>
+                    <h3 class="text-3xl font-bold mb-6 border-l-4 border-indigo-500 pl-4">Intellectual Property: <br>Who Owns AI Art?</h3>
+                    <p class="text-indigo-200 mb-6">
+                        Current US and Singapore laws generally require <strong>human authorship</strong> for copyright. Prompting an AI is not yet considered sufficient creative control.
+                    </p>
+                    
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                        <h4 class="font-bold text-white mb-2">Case Study: <em>Zarya of the Dawn</em></h4>
+                        <p class="text-sm text-slate-400 mb-4">
+                            A comic book created using Midjourney. The US Copyright Office issued a landmark ruling.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-3 bg-emerald-900/30 border border-emerald-500/30 rounded">
+                                <span class="text-emerald-400 font-bold text-xs block mb-1">PROTECTED ✅</span>
+                                <p class="text-xs text-slate-300">Text & Layout (Human arrangement)</p>
+                            </div>
+                            <div class="p-3 bg-rose-900/30 border border-rose-500/30 rounded">
+                                <span class="text-rose-400 font-bold text-xs block mb-1">NOT PROTECTED ❌</span>
+                                <p class="text-xs text-slate-300">Individual Images (AI Generated)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart: IP Claims -->
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700">
+                    <h4 class="text-center text-slate-400 mb-4">Stakeholders Claiming Ownership</h4>
+                    <div class="chart-container">
+                        <canvas id="ipStakeholderChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: SEMINAR 5 PREVIEW -->
+    <section class="py-16 bg-indigo-50 border-t border-indigo-100">
+        <div class="container mx-auto px-6 text-center">
+            <span class="text-xs font-bold text-indigo-600 tracking-widest uppercase mb-2 block">Coming Up</span>
+            <h3 class="text-3xl font-bold text-slate-900 mb-6">Seminar 5: The Human Element</h3>
+            <p class="text-slate-600 max-w-2xl mx-auto mb-8">
+                We move from legal definitions to societal impact. How does AI affect our autonomy, our jobs, and our democracy?
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="px-4 py-2 bg-white shadow-sm rounded-full text-sm font-bold text-slate-700 border border-slate-200">Human Autonomy</span>
+                <span class="px-4 py-2 bg-white shadow-sm rounded-full text-sm font-bold text-slate-700 border border-slate-200">Human-in-the-Loop (HITL)</span>
+                <span class="px-4 py-2 bg-white shadow-sm rounded-full text-sm font-bold text-slate-700 border border-slate-200">Job Displacement</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Buttons -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 max-w-4xl mx-auto">
+                <a href="index.html" class="group flex items-center gap-3 bg-slate-100 hover:bg-slate-200 border border-slate-300 hover:border-indigo-500 text-slate-800 font-semibold py-4 px-8 rounded-xl transition-all duration-300 w-full sm:w-auto justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-600 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    <span>Back to Homepage</span>
+                </a>
+                <a href="study-guide-5.html" class="group flex items-center gap-3 bg-gradient-to-r from-indigo-600 to-pink-500 hover:from-indigo-500 hover:to-pink-400 text-white font-semibold py-4 px-8 rounded-xl shadow-lg shadow-indigo-500/20 transition-all duration-300 w-full sm:w-auto justify-center">
+                    <span>Next Study Guide Infographics</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>EduPortal</span>
-                    </div>
-                    <p>Your comprehensive platform for university lecture materials and educational resources.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="lessons.html">All Lessons</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Information</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> info@eduportal.edu</p>
-                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                        <p><i class="fas fa-map-marker-alt"></i> 123 University Ave, City, State 12345</p>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 EduPortal. All rights reserved.</p>
-            </div>
-        </div>
+    <footer class="bg-white py-8 text-center border-t border-slate-200">
+        <p class="text-slate-400 text-xs">AAI301 Seminar 4 Study Guide • Generated for Student Revision</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- Scripts -->
+    <script>
+        // Utility: Label Wrapping
+        function wrapLabels(labels, maxLen = 15) {
+            return labels.map(label => {
+                if (label.length <= maxLen) return label;
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = words[0];
+                for (let i = 1; i < words.length; i++) {
+                    if ((currentLine + ' ' + words[i]).length <= maxLen) {
+                        currentLine += ' ' + words[i];
+                    } else {
+                        lines.push(currentLine);
+                        currentLine = words[i];
+                    }
+                }
+                lines.push(currentLine);
+                return lines;
+            });
+        }
+
+        // Chart Config
+        Chart.defaults.font.family = "'Plus Jakarta Sans', sans-serif";
+        Chart.defaults.color = '#64748b';
+        
+        const tooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    return Array.isArray(label) ? label.join(' ') : label;
+                }
+            }
+        };
+
+        // 1. Ethics Radar Chart
+        new Chart(document.getElementById('ethicsRadarChart'), {
+            type: 'radar',
+            data: {
+                labels: wrapLabels(['Nonmaleficence', 'Beneficence', 'Privacy Protection', 'Liability Clarity', 'IP Rights']),
+                datasets: [{
+                    label: 'Current Legal/Ethical Focus',
+                    data: [9, 7, 10, 6, 8],
+                    backgroundColor: 'rgba(79, 70, 229, 0.2)', // Indigo
+                    borderColor: '#4f46e5',
+                    pointBackgroundColor: '#4f46e5'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: '#e2e8f0' },
+                        grid: { color: '#e2e8f0' },
+                        pointLabels: { font: { size: 11, weight: '600' }, color: '#475569' },
+                        suggestedMin: 0,
+                        suggestedMax: 10
+                    }
+                },
+                plugins: { legend: { display: false }, tooltip: tooltipConfig }
+            }
+        });
+
+        // 2. Privacy Risk Chart (Horizontal Bar)
+        new Chart(document.getElementById('privacyRiskChart'), {
+            type: 'bar',
+            data: {
+                labels: wrapLabels(['Deepfake Scams (Financial)', 'Identity Theft (Synthetic)', 'Inference Attacks (Data)', 'Data Leakage (Training)', 'Surveillance']),
+                datasets: [{
+                    label: 'Risk Severity (1-10)',
+                    data: [10, 9, 7, 8, 6],
+                    backgroundColor: [
+                        '#f43f5e', // Rose (High)
+                        '#f43f5e',
+                        '#f59e0b', // Amber (Med)
+                        '#f59e0b',
+                        '#10b981'  // Emerald (Low/Med)
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { x: { beginAtZero: true, max: 10 } },
+                plugins: { legend: { display: false }, tooltip: tooltipConfig }
+            }
+        });
+
+        // 3. IP Stakeholders Chart (Doughnut)
+        new Chart(document.getElementById('ipStakeholderChart'), {
+            type: 'doughnut',
+            data: {
+                labels: wrapLabels(['Original Creators (Artists)', 'AI Developers (OpenAI)', 'Users (Prompters)', 'Platform Providers']),
+                datasets: [{
+                    data: [40, 30, 20, 10], // Hypothetical claim strength/volume
+                    backgroundColor: ['#ec4899', '#6366f1', '#14b8a6', '#f59e0b'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { 
+                    legend: { position: 'right' },
+                    tooltip: tooltipConfig 
+                }
+            }
+        });
+
+    </script>
 </body>
 </html>
