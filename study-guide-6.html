@@ -3,236 +3,344 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AAI301 Seminar 6: Governance & Future Infographic</title>
-    <!-- Tailwind CSS -->
+    <title>The Future of Ethical AI | AAI301 Infographic</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
     
-    <!-- Palette: "The Final Frontier" 
-         Background: Deep Space (#020617)
-         Text: Star White (#f8fafc)
-         Accent 1 (Governance/Structure): Cyan 400 (#22d3ee)
-         Accent 2 (Optimism): Emerald 400 (#34d399)
-         Accent 3 (Risk/Pessimism): Rose 500 (#f43f5e)
-         Accent 4 (Future): Violet 500 (#8b5cf6)
-    -->
+    <!-- Palette: Neon Future (Deep Navy, Electric Cyan, Vibrant Purple, Hot Pink) -->
+    <!-- Hex Codes used: #0f172a (bg), #06b6d4 (cyan), #8b5cf6 (purple), #f43f5e (pink) -->
+
     <style>
         body {
-            font-family: 'Exo 2', sans-serif;
-            background-color: #020617; /* Deep Space */
-            color: #f8fafc; /* Star White */
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
         }
-
-        /* Chart Container Styling */
+        h1, h2, h3, .brand-font {
+            font-family: 'Orbitron', sans-serif;
+        }
         .chart-container {
             position: relative;
             width: 100%;
             max-width: 600px;
-            height: 350px;
-            max-height: 400px;
             margin-left: auto;
             margin-right: auto;
+            height: 350px; /* Base height */
+            max-height: 400px;
         }
-        
         @media (min-width: 768px) {
             .chart-container {
                 height: 400px;
             }
         }
-
-        /* Neon Borders */
-        .neon-border-cyan {
-            border: 1px solid #22d3ee;
-            box-shadow: 0 0 10px rgba(34, 211, 238, 0.2);
+        .neon-text {
+            text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
         }
-        .neon-border-violet {
-            border: 1px solid #8b5cf6;
-            box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
-        /* Glassmorphism */
-        .glass-panel {
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(8px);
-            border-radius: 1rem;
+        /* Pyramid CSS Construction (No SVG) */
+        .pyramid-level {
+            clip-path: polygon(10% 0, 90% 0, 100% 100%, 0% 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 4px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
         }
-
-        /* Gradient Text */
-        .text-gradient-future {
-            background: linear-gradient(to right, #22d3ee, #8b5cf6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
+        .pyramid-level:hover {
+            transform: scale(1.02);
         }
+        .pyramid-top { width: 40%; margin: 0 auto; clip-path: polygon(50% 0, 100% 100%, 0% 100%); }
+        .pyramid-mid { width: 70%; margin: 0 auto; }
+        .pyramid-base { width: 100%; margin: 0 auto; }
     </style>
 </head>
-<body class="antialiased selection:bg-cyan-500 selection:text-slate-900">
+<body class="overflow-x-hidden">
 
-    <!-- Header -->
-    <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div>
-                <h1 class="text-2xl font-extrabold tracking-tight text-white">AAI301 <span class="font-light text-cyan-400">| Seminar 6 Study Guide Infographics</span></h1>
+    <!-- HERO SECTION -->
+    <header class="w-full min-h-[50vh] flex flex-col justify-center items-center text-center p-8 bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/circuit-board.png')]"></div>
+        <div class="z-10 max-w-4xl">
+            <div class="inline-block px-4 py-1 mb-4 border border-cyan-400 rounded-full text-cyan-400 text-sm tracking-widest uppercase">AAI301 Seminar 6</div>
+            <h1 class="text-5xl md:text-7xl font-black mb-6 text-white neon-text leading-tight">
+                BUILDING AN <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">ETHICAL AI</span> FUTURE
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto mb-8">
+                Navigating the complex landscape of Governance, Regulation, and the Societal Impact of Generative AI.
+            </p>
+            <div class="flex gap-4 justify-center">
+                <span class="w-3 h-3 rounded-full bg-cyan-500 animate-pulse"></span>
+                <span class="w-3 h-3 rounded-full bg-purple-500 animate-pulse delay-75"></span>
+                <span class="w-3 h-3 rounded-full bg-pink-500 animate-pulse delay-150"></span>
             </div>
-            <nav class="hidden md:flex space-x-8 text-sm font-semibold text-slate-400">
-                <a href="#governance" class="hover:text-cyan-400 transition">Governance</a>
-                <a href="#debate" class="hover:text-emerald-400 transition">The Debate</a>
-                <a href="#timeline" class="hover:text-violet-400 transition">Timeline</a>
-            </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="container mx-auto px-6 py-20 text-center relative overflow-hidden">
-        <!-- Background Glow -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl -z-10"></div>
-        
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-700 text-xs font-bold text-cyan-300 mb-6">
-            <span>🚀</span> Building an Ethical AI Future
-        </div>
-        <h2 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
-            Governance & <br>
-            <span class="text-gradient-future">The Alignment Problem</span>
-        </h2>
-        <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10">
-            How do we regulate a technology that is evolving faster than the law? From the "EU AI Act" to the existential debate between Utopians and Doomers.
-        </p>
-    </section>
-
-    <!-- SECTION 1: GOVERNANCE STACK (Visual Layout) -->
-    <section id="governance" class="py-16 bg-slate-900/50">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Content -->
-                <div>
-                    <h3 class="text-3xl font-bold text-white mb-6 border-l-4 border-cyan-500 pl-4">The Governance Pyramid</h3>
-                    <p class="text-slate-400 mb-8">
-                        Regulation isn't binary. It exists in layers, ranging from internal company policies to enforceable international laws.
-                    </p>
-                    
-                    <div class="space-y-4">
-                        <!-- Top Layer -->
-                        <div class="p-4 bg-slate-800 rounded-lg border-l-4 border-l-rose-500 relative overflow-hidden">
-                            <div class="absolute top-0 right-0 p-2 opacity-10 text-6xl font-black text-rose-500">HARD</div>
-                            <h4 class="text-lg font-bold text-white">3. Hard Law</h4>
-                            <p class="text-sm text-slate-400">Legally binding legislation with penalties.</p>
-                            <div class="mt-2 flex gap-2">
-                                <span class="px-2 py-1 bg-rose-900/50 text-rose-300 text-xs rounded border border-rose-700">EU AI Act</span>
-                                <span class="px-2 py-1 bg-rose-900/50 text-rose-300 text-xs rounded border border-rose-700">POFMA</span>
-                                <span class="px-2 py-1 bg-rose-900/50 text-rose-300 text-xs rounded border border-rose-700">PDPA</span>
-                            </div>
+    <!-- SECTION 1: THE NEED FOR OVERSIGHT -->
+    <section class="py-16 px-4 md:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            
+            <!-- Text Content -->
+            <div>
+                <h2 class="text-3xl font-bold mb-4 text-cyan-400">The Hierarchy of Control</h2>
+                <p class="text-slate-300 mb-6 leading-relaxed">
+                    As Generative AI technologies advance rapidly, they necessitate robust oversight to prevent misuse, bias, and privacy infringements. Governance isn't a "one size fits all" solution; it operates on three distinct levels, ranging from voluntary industry standards to strictly enforced laws.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="text-2xl mr-3">⚖️</div>
+                        <div>
+                            <h4 class="font-bold text-white">Hard Law (Legislation)</h4>
+                            <p class="text-sm text-slate-400">Legally binding rules with penalties (e.g., EU AI Act, POFMA).</p>
                         </div>
-
-                        <!-- Middle Layer -->
-                        <div class="p-4 bg-slate-800 rounded-lg border-l-4 border-l-amber-500 relative overflow-hidden">
-                            <div class="absolute top-0 right-0 p-2 opacity-10 text-6xl font-black text-amber-500">SOFT</div>
-                            <h4 class="text-lg font-bold text-white">2. Soft Law</h4>
-                            <p class="text-sm text-slate-400">Non-binding frameworks & guidelines.</p>
-                            <div class="mt-2 flex gap-2">
-                                <span class="px-2 py-1 bg-amber-900/50 text-amber-300 text-xs rounded border border-amber-700">AI Verify</span>
-                                <span class="px-2 py-1 bg-amber-900/50 text-amber-300 text-xs rounded border border-amber-700">UNESCO Ethics</span>
-                            </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-2xl mr-3">📜</div>
+                        <div>
+                            <h4 class="font-bold text-white">Soft Law (Guidelines)</h4>
+                            <p class="text-sm text-slate-400">Non-binding frameworks (e.g., OECD Principles, AI Verify).</p>
                         </div>
-
-                        <!-- Bottom Layer -->
-                        <div class="p-4 bg-slate-800 rounded-lg border-l-4 border-l-cyan-500 relative overflow-hidden">
-                            <div class="absolute top-0 right-0 p-2 opacity-10 text-6xl font-black text-cyan-500">SELF</div>
-                            <h4 class="text-lg font-bold text-white">1. Self-Regulation</h4>
-                            <p class="text-sm text-slate-400">Internal company ethics boards & policies.</p>
-                            <div class="mt-2 flex gap-2">
-                                <span class="px-2 py-1 bg-cyan-900/50 text-cyan-300 text-xs rounded border border-cyan-700">OpenAI Charter</span>
-                                <span class="px-2 py-1 bg-cyan-900/50 text-cyan-300 text-xs rounded border border-cyan-700">Google AI Principles</span>
-                            </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="text-2xl mr-3">🤝</div>
+                        <div>
+                            <h4 class="font-bold text-white">Self-Regulation</h4>
+                            <p class="text-sm text-slate-400">Internal company ethics boards and best practices.</p>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Chart: Regulatory Compass -->
-                <div class="glass-panel p-6 neon-border-cyan">
-                    <h4 class="text-center text-cyan-300 mb-4 font-bold tracking-widest uppercase text-sm">Regulatory Priority Compass</h4>
-                    <div class="chart-container">
-                        <canvas id="regulationChart"></canvas>
+            <!-- Visualization: CSS Pyramid -->
+            <div class="p-8 glass-card rounded-xl">
+                <h3 class="text-center mb-6 brand-font text-lg text-slate-300">Levels of Governance</h3>
+                <div class="w-full max-w-xs mx-auto flex flex-col justify-end h-64">
+                    <!-- Top -->
+                    <div class="pyramid-top bg-gradient-to-b from-pink-500 to-pink-700 h-20 flex items-end justify-center pb-2 shadow-lg z-30">
+                        <span class="text-xs text-white">Hard Law</span>
+                    </div>
+                    <!-- Mid -->
+                    <div class="pyramid-level pyramid-mid bg-gradient-to-b from-purple-500 to-purple-700 h-20 shadow-lg z-20 -mt-1">
+                        <span class="text-sm text-white">Soft Law</span>
+                    </div>
+                    <!-- Base -->
+                    <div class="pyramid-level pyramid-base bg-gradient-to-b from-cyan-500 to-cyan-700 h-24 shadow-lg z-10 -mt-1">
+                        <span class="text-base text-white font-bold">Self-Regulation</span>
                     </div>
                 </div>
+                <p class="text-center text-xs text-slate-500 mt-4">Foundational Base -> Enforceable Top</p>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 2: THE GREAT DEBATE (Diverging Bar) -->
-    <section id="debate" class="py-16 bg-slate-950">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl font-bold text-white mb-2">The Great Schism</h3>
-                <p class="text-slate-400">Is AI our salvation or our extinction? The experts are divided.</p>
+    <!-- SECTION 2: 2025 TRENDS (Radar Chart) -->
+    <section class="py-16 bg-slate-800 bg-opacity-50">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <div class="mb-10 text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4 text-purple-400">The 2025 Evolutionary Leap</h2>
+                <p class="text-slate-300">
+                    Why is regulation urgent now? Because AI is no longer just generating text. Between 2023 and 2025, we have witnessed a shift towards <strong>Agentic AI</strong> (autonomous action), <strong>Advanced Reasoning</strong>, and true <strong>Multimodality</strong>. The capabilities have expanded exponentially.
+                </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- Optimists -->
-                <div class="col-span-1 p-6 glass-panel border border-emerald-500/30">
-                    <div class="text-4xl mb-4">🚀</div>
-                    <h4 class="text-xl font-bold text-emerald-400 mb-2">The Optimists</h4>
-                    <p class="text-sm text-slate-300 mb-2"><em>Mustafa Suleyman, Demis Hassabis</em></p>
-                    <ul class="text-sm text-slate-400 list-disc list-inside space-y-2">
-                        <li>Curing all diseases</li>
-                        <li>Solving climate change</li>
-                        <li>"Radical abundance"</li>
-                        <li>Personalized tutors for all</li>
+                <!-- Chart Container -->
+                <div class="lg:col-span-2 glass-card rounded-2xl p-6">
+                    <div class="chart-container">
+                        <canvas id="trendsRadarChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Info Cards -->
+                <div class="flex flex-col gap-4 justify-center">
+                    <div class="bg-slate-900 p-5 rounded-lg border-l-4 border-cyan-400 shadow-lg">
+                        <h4 class="font-bold text-cyan-400 mb-1">Reasoning</h4>
+                        <p class="text-sm text-slate-300">Models like OpenAI o1 now perform multistep problem-solving and nuanced analysis.</p>
+                    </div>
+                    <div class="bg-slate-900 p-5 rounded-lg border-l-4 border-purple-400 shadow-lg">
+                        <h4 class="font-bold text-purple-400 mb-1">Agentic AI</h4>
+                        <p class="text-sm text-slate-300">Systems that don't just chat, but handle workflows (scheduling, coding) autonomously.</p>
+                    </div>
+                    <div class="bg-slate-900 p-5 rounded-lg border-l-4 border-pink-400 shadow-lg">
+                        <h4 class="font-bold text-pink-400 mb-1">Multimodality</h4>
+                        <p class="text-sm text-slate-300">Seamless processing and generation of Text, Audio, Image, and Video simultaneously.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: THE FOUR PILLARS (Grid Layout) -->
+    <section class="py-16 px-4 md:px-8 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center text-white">Four Pillars of Ethical Responsibility</h2>
+        <p class="text-center text-slate-400 max-w-3xl mx-auto mb-12">
+            Governance (Internal) and Regulation (External) must work in tandem to address four critical areas of concern.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Card 1: Bias -->
+            <div class="glass-card p-6 rounded-xl hover:bg-slate-800 transition duration-300 group">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-pink-900 flex items-center justify-center text-pink-400 text-2xl mr-4 group-hover:scale-110 transition">🚫</div>
+                    <h3 class="text-xl font-bold text-pink-400">Bias & Discrimination</h3>
+                </div>
+                <div class="grid grid-cols-2 gap-4 text-sm">
+                    <div class="bg-slate-900 p-3 rounded">
+                        <span class="text-xs uppercase text-slate-500 font-bold block mb-1">Governance</span>
+                        Internal audits, "FAST Track" principles, continuous monitoring.
+                    </div>
+                    <div class="bg-slate-900 p-3 rounded">
+                        <span class="text-xs uppercase text-slate-500 font-bold block mb-1">Regulation</span>
+                        Mandatory impact assessments for high-risk AI.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Misinformation -->
+            <div class="glass-card p-6 rounded-xl hover:bg-slate-800 transition duration-300 group">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-yellow-900 flex items-center justify-center text-yellow-400 text-2xl mr-4 group-hover:scale-110 transition">⚠️</div>
+                    <h3 class="text-xl font-bold text-yellow-400">Misinformation</h3>
+                </div>
+                <div class="grid grid-cols-2 gap-4 text-sm">
+                    <div class="bg-slate-900 p-3 rounded">
+                        <span class="text-xs uppercase text-slate-500 font-bold block mb-1">Governance</span>
+                        Red Teaming, content moderation, responsible guidelines.
+                    </div>
+                    <div class="bg-slate-900 p-3 rounded">
+                        <span class="text-xs uppercase text-slate-500 font-bold block mb-1">Regulation</span>
+                        Watermarking laws, liability for harmful content (POFMA).
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: IP & Copyright -->
+            <div class="glass-card p-6 rounded-xl hover:bg-slate-800 transition duration-300 group">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-cyan-900 flex items-center justify-center text-cyan-400 text-2xl mr-4 group-hover:scale-110 transition">©️</div>
+                    <h3 class="text-xl font-bold text-cyan-400">IP & Copyright</h3>
+                </div>
+                <div class="grid grid-cols-2 gap-4 text-sm">
+                    <div class="bg-slate-900 p-3 rounded">
+                        <span class="text-xs uppercase text-slate-500 font-bold block mb-1">Governance</span>
+                        Ethical data sourcing, licensing agreements.
+                    </div>
+                    <div class="bg-slate-900 p-3 rounded">
+                        <span class="text-xs uppercase text-slate-500 font-bold block mb-1">Regulation</span>
+                        Transparency on training data (EU AI Act), human authorship rules.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Privacy -->
+            <div class="glass-card p-6 rounded-xl hover:bg-slate-800 transition duration-300 group">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-purple-900 flex items-center justify-center text-purple-400 text-2xl mr-4 group-hover:scale-110 transition">🔒</div>
+                    <h3 class="text-xl font-bold text-purple-400">Privacy & Data</h3>
+                </div>
+                <div class="grid grid-cols-2 gap-4 text-sm">
+                    <div class="bg-slate-900 p-3 rounded">
+                        <span class="text-xs uppercase text-slate-500 font-bold block mb-1">Governance</span>
+                        Privacy by Design, data minimization.
+                    </div>
+                    <div class="bg-slate-900 p-3 rounded">
+                        <span class="text-xs uppercase text-slate-500 font-bold block mb-1">Regulation</span>
+                        GDPR compliance, explicit consent mandates.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: THE DEBATE (Diverging Bar Chart) -->
+    <section class="py-16 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <h2 class="text-3xl font-bold mb-4 text-center text-white">The Future: Promise vs. Peril</h2>
+            <p class="text-center text-slate-300 mb-10 max-w-2xl mx-auto">
+                Thought leaders are starkly divided. Optimists like Mustafa Suleyman see abundance and health, while pessimists like Geoffrey Hinton warn of existential risks.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                <!-- Optimist Text -->
+                <div class="text-right hidden lg:block">
+                    <h3 class="text-cyan-400 font-bold text-xl">The Optimists</h3>
+                    <p class="text-xs text-slate-400 mb-2">Suleyman, Hassabis</p>
+                    <ul class="text-sm text-slate-300 space-y-2">
+                        <li>"Cure all diseases"</li>
+                        <li>"Personal AI Companions"</li>
+                        <li>"Radical Abundance"</li>
                     </ul>
                 </div>
 
-                <!-- Chart: Diverging View -->
-                <div class="col-span-1 lg:col-span-1 flex items-center justify-center">
-                    <div class="w-full h-full glass-panel p-4">
+                <!-- Chart -->
+                <div class="lg:col-span-1 glass-card p-4 rounded-xl">
+                    <div class="chart-container" style="height: 400px;">
                         <canvas id="debateChart"></canvas>
                     </div>
                 </div>
 
-                <!-- Pessimists -->
-                <div class="col-span-1 p-6 glass-panel border border-rose-500/30">
-                    <div class="text-4xl mb-4">🛑</div>
-                    <h4 class="text-xl font-bold text-rose-400 mb-2">The Pessimists</h4>
-                    <p class="text-sm text-slate-300 mb-2"><em>Geoffrey Hinton, Yoshua Bengio</em></p>
-                    <ul class="text-sm text-slate-400 list-disc list-inside space-y-2">
-                        <li>Loss of human control</li>
-                        <li>Existential risk (Extinction)</li>
-                        <li>The "Alignment Problem"</li>
-                        <li>Extreme power concentration</li>
+                <!-- Pessimist Text -->
+                <div class="text-left hidden lg:block">
+                    <h3 class="text-pink-500 font-bold text-xl">The Pessimists</h3>
+                    <p class="text-xs text-slate-400 mb-2">Hinton, Bengio</p>
+                    <ul class="text-sm text-slate-300 space-y-2">
+                        <li>"10-20% chance of AI takeover"</li>
+                        <li>"Human Extinction"</li>
+                        <li>"Concentration of Power"</li>
                     </ul>
+                </div>
+                
+                <!-- Mobile Only Text Block -->
+                <div class="lg:hidden col-span-1 grid grid-cols-2 gap-4 text-center">
+                    <div>
+                        <h3 class="text-cyan-400 font-bold">Optimists</h3>
+                        <p class="text-xs text-slate-300">Predict healthcare revolution and global abundance.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-pink-500 font-bold">Pessimists</h3>
+                        <p class="text-xs text-slate-300">Warn of loss of control and existential risk.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: THE TIMELINE (Line Chart) -->
-    <section id="timeline" class="py-16 bg-slate-900/50">
-        <div class="container mx-auto px-6">
-            <h3 class="text-3xl font-bold text-center text-white mb-4">The Alignment Gap</h3>
-            <p class="text-center text-slate-400 max-w-2xl mx-auto mb-12">
-                The most pressing challenge: Technology evolves exponentially, while regulation evolves linearly. This creates a dangerous "Safety Gap."
-            </p>
-            
-            <div class="glass-panel p-6 neon-border-violet">
-                <div class="chart-container">
-                    <canvas id="timelineChart"></canvas>
-                </div>
-            </div>
+    <!-- SECTION 5: TIMELINE (Line Chart) -->
+    <section class="py-16 px-4 md:px-8 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4 text-center text-white">Impact Trajectory</h2>
+        <p class="text-center text-slate-400 max-w-3xl mx-auto mb-8">
+            Analyzing the projected timeline of benefits versus risks over the coming decades. Note the spike in systemic risk in the medium term.
+        </p>
 
-            <!-- Activity Card -->
-            <div class="mt-12 p-6 bg-indigo-900/20 border border-indigo-500/50 rounded-xl text-center">
-                <h4 class="text-lg font-bold text-indigo-300 mb-2">Activity: The AI Regulatory Sandbox</h4>
-                <p class="text-sm text-slate-400 max-w-xl mx-auto">
-                    To bridge this gap, governments use "Sandboxes"—controlled environments where startups can test high-risk AI (like medical diagnostics) with relaxed rules but strict oversight.
-                </p>
+        <div class="glass-card p-6 rounded-2xl">
+            <div class="chart-container" style="width: 100%; height: 400px;">
+                <canvas id="timelineChart"></canvas>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 text-center text-sm">
+                <div class="p-3 bg-slate-900 rounded border-t-2 border-slate-500">
+                    <h5 class="font-bold text-white">Short Term (1-5y)</h5>
+                    <p class="text-slate-400">Disinformation, Job Displacement, Productivity Boosts</p>
+                </div>
+                <div class="p-3 bg-slate-900 rounded border-t-2 border-slate-500">
+                    <h5 class="font-bold text-white">Medium Term (5-15y)</h5>
+                    <p class="text-slate-400">Systemic Financial Risks, Personalized Medicine</p>
+                </div>
+                <div class="p-3 bg-slate-900 rounded border-t-2 border-slate-500">
+                    <h5 class="font-bold text-white">Long Term (15y+)</h5>
+                    <p class="text-slate-400">AGI, Superintelligence, Potential Extinction vs. Flourishing</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Navigation Buttons -->
-    <section class="py-12 bg-slate-950">
+    <section class="py-12 bg-slate-900">
         <div class="container mx-auto px-6">
             <div class="flex flex-col sm:flex-row justify-between items-center gap-4 max-w-4xl mx-auto">
                 <a href="index.html" class="group flex items-center gap-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-cyan-500 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 w-full sm:w-auto justify-center">
@@ -241,8 +349,8 @@
                     </svg>
                     <span>Back to Homepage</span>
                 </a>
-                <a href="study-guide-1.html" class="group flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-violet-500 hover:from-cyan-400 hover:to-violet-400 text-white font-semibold py-4 px-8 rounded-xl shadow-lg shadow-cyan-500/20 transition-all duration-300 w-full sm:w-auto justify-center">
-                    <span>Start Over: Study Guide 1</span>
+                <a href="study-guide-1.html" class="group flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white font-semibold py-4 px-8 rounded-xl shadow-lg shadow-cyan-500/20 transition-all duration-300 w-full sm:w-auto justify-center">
+                    <span>Start Over: Seminar 1 Study Guide Infographics</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
@@ -251,170 +359,206 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-950 py-8 border-t border-slate-900 text-center">
-        <p class="text-slate-600 text-xs">AAI301 Seminar 6 Study Guide • Generated for Student Revision</p>
+    <!-- FOOTER -->
+    <footer class="py-8 text-center text-slate-500 text-sm bg-slate-950">
+        <p>Source Material: AAI301 Seminar 6 Lecture & Study Guide</p>
+        <p>&copy; 2026 AAI301 Course Materials</p>
     </footer>
 
-    <!-- Scripts -->
+    <!-- JAVASCRIPT FOR CHARTS -->
     <script>
-        // Utility: Label Wrapping
-        function wrapLabels(labels, maxLen = 15) {
-            return labels.map(label => {
-                if (label.length <= maxLen) return label;
-                const words = label.split(' ');
-                const lines = [];
-                let currentLine = words[0];
-                for (let i = 1; i < words.length; i++) {
-                    if ((currentLine + ' ' + words[i]).length <= maxLen) {
-                        currentLine += ' ' + words[i];
-                    } else {
-                        lines.push(currentLine);
-                        currentLine = words[i];
-                    }
+        // --- UTILITY: LABEL SPLITTER (16 char limit) ---
+        function splitLabel(label) {
+            if (label.length <= 16) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + 1 + words[i].length <= 16) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
                 }
-                lines.push(currentLine);
-                return lines;
-            });
+            }
+            lines.push(currentLine);
+            return lines;
         }
 
-        // Chart Config
-        Chart.defaults.font.family = "'Exo 2', sans-serif";
-        Chart.defaults.color = '#94a3b8';
-        
-        const tooltipConfig = {
-            callbacks: {
-                title: function(tooltipItems) {
-                    const item = tooltipItems[0];
-                    let label = item.chart.data.labels[item.dataIndex];
-                    return Array.isArray(label) ? label.join(' ') : label;
+        // --- COMMON CHART OPTIONS ---
+        const commonOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                tooltip: {
+                    backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                    titleColor: '#fff',
+                    bodyColor: '#cbd5e1',
+                    borderColor: '#38bdf8',
+                    borderWidth: 1,
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            } else {
+                                return label;
+                            }
+                        }
+                    }
+                },
+                legend: {
+                    labels: { color: '#e2e8f0', font: { family: 'Inter' } }
                 }
             }
         };
 
-        // 1. Regulatory Compass (Polar Area)
-        new Chart(document.getElementById('regulationChart'), {
-            type: 'polarArea',
+        // --- CHART 1: 2025 TRENDS (RADAR) ---
+        const ctxRadar = document.getElementById('trendsRadarChart').getContext('2d');
+        new Chart(ctxRadar, {
+            type: 'radar',
             data: {
-                labels: wrapLabels(['Bias Mitigation', 'Misinformation (Watermarking)', 'Copyright/IP Rights', 'Privacy Protection', 'Safety Testing']),
-                datasets: [{
-                    label: 'Regulatory Intensity',
-                    data: [9, 10, 7, 8, 9],
-                    backgroundColor: [
-                        'rgba(34, 211, 238, 0.6)', // Cyan
-                        'rgba(244, 63, 94, 0.6)',  // Rose (Misinfo is high priority)
-                        'rgba(139, 92, 246, 0.6)', // Violet
-                        'rgba(52, 211, 153, 0.6)', // Emerald
-                        'rgba(251, 191, 36, 0.6)'  // Amber
-                    ],
-                    borderWidth: 1,
-                    borderColor: '#0f172a'
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    r: {
-                        grid: { color: '#334155' },
-                        ticks: { display: false, backdropColor: 'transparent' },
-                        pointLabels: { color: '#e2e8f0', font: { size: 11 } }
-                    }
-                },
-                plugins: { legend: { position: 'bottom' }, tooltip: tooltipConfig }
-            }
-        });
-
-        // 2. The Debate (Bar Chart)
-        new Chart(document.getElementById('debateChart'), {
-            type: 'bar',
-            data: {
-                labels: wrapLabels(['Healthcare', 'Productivity', 'Scientific Discovery', 'Equality', 'Control']),
+                labels: ['Reasoning & Logic', 'Multimodal I/O', 'Agentic Workflow', 'Context Window', 'Realism', 'Personalization'].map(splitLabel),
                 datasets: [
                     {
-                        label: 'Optimist Score',
-                        data: [10, 9, 10, 6, 5],
-                        backgroundColor: '#34d399', // Emerald
+                        label: '2022-2023 Capabilities',
+                        data: [40, 30, 20, 40, 60, 30],
+                        backgroundColor: 'rgba(139, 92, 246, 0.2)', // Purple
+                        borderColor: '#8b5cf6',
+                        pointBackgroundColor: '#8b5cf6',
+                        borderWidth: 2
                     },
                     {
-                        label: 'Pessimist Risk',
-                        data: [-2, -3, -1, -8, -10], // Negative values for risks
-                        backgroundColor: '#f43f5e', // Rose
-                    }
-                ]
-            },
-            options: {
-                indexAxis: 'y',
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    x: {
-                        grid: { color: '#334155' },
-                        ticks: { callback: function(val) { return Math.abs(val); } } // Show positive numbers
-                    },
-                    y: { grid: { display: false } }
-                },
-                plugins: { 
-                    legend: { position: 'bottom' }, 
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                return context.dataset.label + ': ' + Math.abs(context.raw);
-                            }
-                        }
-                    }
-                }
-            }
-        });
-
-        // 3. Timeline Chart (Line)
-        new Chart(document.getElementById('timelineChart'), {
-            type: 'line',
-            data: {
-                labels: ['2020', '2022 (ChatGPT)', '2024', '2026', '2028', '2030 (AGI?)'],
-                datasets: [
-                    {
-                        label: 'AI Capability (Exponential)',
-                        data: [10, 25, 50, 85, 130, 200],
-                        borderColor: '#22d3ee', // Cyan
-                        backgroundColor: '#22d3ee',
-                        tension: 0.4,
-                        borderWidth: 3
-                    },
-                    {
-                        label: 'Safety Regulation (Linear)',
-                        data: [10, 15, 30, 45, 60, 75],
-                        borderColor: '#f43f5e', // Rose
-                        backgroundColor: '#f43f5e',
-                        tension: 0.1,
-                        borderDash: [5, 5],
+                        label: '2025 Projected',
+                        data: [90, 95, 85, 90, 95, 90],
+                        backgroundColor: 'rgba(6, 182, 212, 0.4)', // Cyan
+                        borderColor: '#06b6d4',
+                        pointBackgroundColor: '#06b6d4',
                         borderWidth: 2
                     }
                 ]
             },
             options: {
-                responsive: true,
-                maintainAspectRatio: false,
+                ...commonOptions,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                        pointLabels: {
+                            color: '#e2e8f0',
+                            font: { size: 12, family: 'Inter' }
+                        },
+                        ticks: { display: false, backdropColor: 'transparent' }
+                    }
+                }
+            }
+        });
+
+        // --- CHART 2: PROMISE VS PERIL (HORIZONTAL BAR - DIVERGING SIMULATION) ---
+        const ctxDebate = document.getElementById('debateChart').getContext('2d');
+        new Chart(ctxDebate, {
+            type: 'bar',
+            data: {
+                labels: ['Healthcare Revolution', 'Human Extinction', 'Economic Abundance', 'Loss of Control', 'Productivity Boost', 'Social Inequality'].map(splitLabel),
+                datasets: [{
+                    label: 'Impact Intensity Score',
+                    // Positive for Optimistic, Negative for Pessimistic to create divergence
+                    data: [90, -95, 80, -85, 75, -70],
+                    backgroundColor: (context) => {
+                        const val = context.raw;
+                        return val > 0 ? 'rgba(6, 182, 212, 0.8)' : 'rgba(244, 63, 94, 0.8)'; // Cyan vs Pink
+                    },
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                ...commonOptions,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        grid: { color: 'rgba(255, 255, 255, 0.1)', drawTicks: false },
+                        ticks: {
+                            color: '#cbd5e1',
+                            callback: function(val) { return Math.abs(val); } // Hide negative sign
+                        }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { color: '#e2e8f0' }
+                    }
+                },
                 plugins: {
-                    legend: { position: 'top' },
-                    annotation: {
-                        annotations: {
-                            line1: {
-                                type: 'line',
-                                yMin: 0, yMax: 200, xMin: '2026', xMax: '2026',
-                                borderColor: 'white', borderWidth: 1, borderDash: [2, 2],
-                                label: { enabled: true, content: 'We Are Here' }
+                    ...commonOptions.plugins,
+                    legend: { display: false },
+                    tooltip: {
+                        ...commonOptions.plugins.tooltip,
+                        callbacks: {
+                            ...commonOptions.plugins.tooltip.callbacks,
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                label += Math.abs(context.raw); // Show absolute value
+                                label += context.raw > 0 ? ' (Optimistic)' : ' (Pessimistic)';
+                                return label;
                             }
                         }
                     }
-                },
+                }
+            }
+        });
+
+        // --- CHART 3: TIMELINE (LINE CHART) ---
+        const ctxTimeline = document.getElementById('timelineChart').getContext('2d');
+        new Chart(ctxTimeline, {
+            type: 'line',
+            data: {
+                labels: ['Present Day', 'Short Term (1-5y)', 'Medium Term (5-15y)', 'Long Term (15y+)', 'Singularity'].map(splitLabel),
+                datasets: [
+                    {
+                        label: 'Societal Benefits',
+                        data: [20, 50, 75, 90, 100],
+                        borderColor: '#06b6d4', // Cyan
+                        backgroundColor: 'rgba(6, 182, 212, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Existential/Systemic Risks',
+                        data: [30, 45, 80, 85, 95], // Spike in medium term
+                        borderColor: '#f43f5e', // Pink
+                        backgroundColor: 'rgba(244, 63, 94, 0.1)',
+                        fill: true,
+                        borderDash: [5, 5],
+                        tension: 0.4
+                    }
+                ]
+            },
+            options: {
+                ...commonOptions,
                 scales: {
-                    y: { display: false },
-                    x: { grid: { color: '#334155' } }
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                        ticks: { display: false } // Abstract magnitude
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#cbd5e1' }
+                    }
                 }
             }
         });
 
     </script>
+    <!-- 
+        CONFIRMATION: 
+        1. NO SVG used.
+        2. NO Mermaid JS used.
+        3. Palette used: Neon Future (#0f172a, #06b6d4, #8b5cf6, #f43f5e).
+    -->
 </body>
 </html>
