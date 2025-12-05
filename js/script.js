@@ -1,4 +1,4 @@
-// Main JavaScript file for EduPortal
+// Main JavaScript file for AAI301 SUSS Study Guide
 
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile navigation functionality
@@ -129,10 +129,12 @@ function debounce(func, wait) {
 }
 
 // Export functions for use in other files
-window.EduPortal = {
+window.AAI301 = {
     formatDate,
     createSlug,
     showLoading,
     showError,
     debounce
 };
+// Alias for backward compatibility
+window.EduPortal = window.AAI301;

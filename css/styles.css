@@ -37,13 +37,13 @@ p {
 }
 
 a {
-    color: #3182ce;
+    color: #E35205;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #2c5aa0;
+    color: #C44504;
 }
 
 /* Container */
@@ -76,13 +76,13 @@ a:hover {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #E35205 0%, #C44504 100%);
     color: white;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 8px 25px rgba(227, 82, 5, 0.3);
     color: white;
 }
 
@@ -133,7 +133,7 @@ a:hover {
 
 .nav-logo i {
     font-size: 1.8rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #E35205 0%, #C44504 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -155,7 +155,7 @@ a:hover {
 
 .nav-link:hover,
 .nav-link.active {
-    color: #667eea;
+    color: #E35205;
 }
 
 .nav-link.active::after,
@@ -166,7 +166,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #E35205 0%, #C44504 100%);
     border-radius: 2px;
 }
 
@@ -230,7 +230,7 @@ a:hover {
 .hero {
     margin-top: 70px;
     padding: 4rem 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1B365D 0%, #0D1B2A 100%);
     color: white;
     overflow: hidden;
     position: relative;
@@ -361,7 +361,7 @@ a:hover {
 }
 
 .view-all {
-    color: #667eea;
+    color: #E35205;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -371,7 +371,7 @@ a:hover {
 
 .view-all:hover {
     gap: 1rem;
-    color: #5a67d8;
+    color: #C44504;
 }
 
 /* Grids */
@@ -409,7 +409,7 @@ a:hover {
 .feature-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #E35205 0%, #C44504 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -447,7 +447,7 @@ a:hover {
 .overview-icon {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #E35205 0%, #C44504 100%);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -493,7 +493,7 @@ a:hover {
 }
 
 .lesson-count {
-    color: #667eea;
+    color: #E35205;
     font-weight: 500;
     font-size: 0.9rem;
 }
@@ -515,7 +515,7 @@ a:hover {
 
 .lesson-thumbnail {
     height: 120px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1B365D 0%, #0D1B2A 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -567,7 +567,7 @@ a:hover {
 }
 
 .lesson-link {
-    color: #667eea;
+    color: #E35205;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -577,7 +577,7 @@ a:hover {
 
 .lesson-link:hover {
     gap: 1rem;
-    color: #5a67d8;
+    color: #C44504;
 }
 
 /* Search and Filter */
@@ -605,7 +605,7 @@ a:hover {
 }
 
 .search-bar button {
-    background: #667eea;
+    background: #E35205;
     color: white;
     border: none;
     padding: 1rem 1.5rem;
@@ -614,7 +614,7 @@ a:hover {
 }
 
 .search-bar button:hover {
-    background: #5a67d8;
+    background: #C44504;
 }
 
 .filter-options {
@@ -636,7 +636,7 @@ a:hover {
 }
 
 .filter-options select:focus {
-    border-color: #667eea;
+    border-color: #E35205;
 }
 
 /* No Results */
@@ -668,7 +668,7 @@ a:hover {
 }
 
 .breadcrumb a {
-    color: #667eea;
+    color: #E35205;
 }
 
 .breadcrumb span {
@@ -730,7 +730,7 @@ a:hover {
 }
 
 .content-wrapper blockquote {
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #E35205;
     padding: 1rem 1.5rem;
     margin: 1.5rem 0;
     background: #f8fafc;
@@ -769,7 +769,7 @@ a:hover {
 .loading i {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #667eea;
+    color: #E35205;
 }
 
 /* Lesson Navigation */
@@ -803,10 +803,10 @@ a:hover {
 }
 
 .lesson-nav a:hover {
-    border-color: #667eea;
+    border-color: #E35205;
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    color: #667eea;
+    color: #E35205;
 }
 
 .lesson-nav div span {
@@ -879,7 +879,7 @@ a:hover {
 .stat-number {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #667eea;
+    color: #E35205;
     margin-bottom: 0.5rem;
 }
 
@@ -907,7 +907,7 @@ a:hover {
 .member-photo {
     width: 100px;
     height: 100px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1B365D 0%, #0D1B2A 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -926,7 +926,7 @@ a:hover {
 }
 
 .member-role {
-    color: #667eea;
+    color: #E35205;
     font-weight: 600;
     margin-bottom: 1rem;
 }
@@ -953,7 +953,7 @@ a:hover {
 .contact-icon {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #E35205 0%, #C44504 100%);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -1017,7 +1017,7 @@ a:hover {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    border-color: #667eea;
+    border-color: #E35205;
 }
 
 .form-group textarea {
@@ -1058,7 +1058,7 @@ a:hover {
 
 /* Footer */
 .footer {
-    background: #2c3e50;
+    background: #1B365D;
     color: white;
     padding: 3rem 0 1rem;
 }
@@ -1086,7 +1086,7 @@ a:hover {
 
 .footer-logo i {
     font-size: 1.8rem;
-    color: #667eea;
+    color: #E35205;
 }
 
 .footer-section p {
@@ -1108,7 +1108,7 @@ a:hover {
 }
 
 .footer-section a:hover {
-    color: #667eea;
+    color: #E35205;
 }
 
 .contact-info p {
@@ -1121,7 +1121,7 @@ a:hover {
 
 .contact-info i {
     width: 16px;
-    color: #667eea;
+    color: #E35205;
 }
 
 .social-links {
@@ -1141,7 +1141,7 @@ a:hover {
 }
 
 .social-links a:hover {
-    background: #667eea;
+    background: #E35205;
     transform: translateY(-2px);
 }
 
@@ -1275,7 +1275,7 @@ input:focus,
 select:focus,
 textarea:focus,
 a:focus {
-    outline: 2px solid #667eea;
+    outline: 2px solid #E35205;
     outline-offset: 2px;
 }
 

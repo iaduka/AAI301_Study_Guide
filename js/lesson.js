@@ -342,7 +342,7 @@ function updateLessonNavigation(currentId) {
 }
 
 function updatePageTitle(lesson) {
-    document.title = `${lesson.title} - EduPortal`;
+    document.title = `${lesson.title} - AAI301 SUSS`;
 }
 
 function showLessonNotFound() {
@@ -368,7 +368,7 @@ function showLessonNotFound() {
     }
 
     // Update page title
-    document.title = 'Lesson Not Found - EduPortal';
+    document.title = 'Lesson Not Found - AAI301 SUSS';
 }
 
 // Download functionality

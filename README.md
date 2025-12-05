@@ -1,6 +1,6 @@
-# EduPortal - University Lecture Materials Website
+# AAI301 Ethical and Societal Impact of Generative AI - SUSS Study Guide
 
-A modern, responsive educational website designed for hosting university lecture materials. Built with HTML, CSS, and vanilla JavaScript.
+A modern, responsive educational website for the SUSS AAI301 course on ethical and societal impact of generative AI. Built with HTML, CSS, and vanilla JavaScript.
 
 ## Features
 
@@ -54,7 +54,7 @@ A modern, responsive educational website designed for hosting university lecture
 ## File Structure
 
 ```
-EduPortal/
+AAI301_Study_Guide/
 ├── index.html              # Homepage
 ├── lessons.html            # All lessons page
 ├── lesson.html             # Individual lesson page
